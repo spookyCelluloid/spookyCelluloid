@@ -29,7 +29,7 @@ Once the project moves into development, the press release can be used as a touc
   > Finding safe and quality elderly care facility is difficult.
 
 ## Solution ##
-  > Collection facilities' profiles.
+  > Collections of facility profile.
   > Transparent user reviews.
   > Easy to find and compare facilities.
   > Supply as much information as possible for decision making.
