@@ -4,9 +4,9 @@
 
 ## Team
 
-  - __Product Owner__: Tim
-  - __Scrum Master__: Miles
-  - __Development Team Members__: Jesse, Robin
+  - __Product Owner__: Tim Zeng
+  - __Scrum Master__: Miles Smith
+  - __Development Team Members__: Robin Kuehn, Jesse Mavi
 
 ## Table of Contents
 
