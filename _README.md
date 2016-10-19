@@ -1,12 +1,12 @@
 # Project Name
 
-> Pithy project description
+> Spooky Celluloid
 
 ## Team
 
-  - __Product Owner__: teamMember
-  - __Scrum Master__: teamMember
-  - __Development Team Members__: teamMember, teamMember
+  - __Product Owner__: Tim
+  - __Scrum Master__: Miles
+  - __Development Team Members__: Jesse, Robin
 
 ## Table of Contents
 
