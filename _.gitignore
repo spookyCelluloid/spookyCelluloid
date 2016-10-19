@@ -1,8 +1,5 @@
 ### node etc ###
 
-# dependencies
-node_modules
-
 # testing
 coverage
 
