@@ -45,11 +45,11 @@ CREATE TABLE `Comments` (
 -- 
 -- ---
 
-DROP TABLE IF EXISTS `business profile`;
+DROP TABLE IF EXISTS `Business_profile`;
     
-CREATE TABLE `business profile` (
+CREATE TABLE `Business_profile` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
-  `ownership` VARCHAR NOT NULL DEFAULT 'NULL',
+  `ownership` VARCHAR(50) NOT NULL DEFAULT 'NULL',
   `dietary options` VARCHAR(100) NOT NULL DEFAULT 'NULL',
   `social events` VARCHAR(3) NOT NULL DEFAULT 'NULL',
   `number of staff` INTEGER(3) NOT NULL DEFAULT NULL,
@@ -57,6 +57,7 @@ CREATE TABLE `business profile` (
   `Medicare` VARCHAR(3) NOT NULL DEFAULT 'NULL',
   `average years of experience` INTEGER(2) NOT NULL DEFAULT NULL,
   `facility name` VARCHAR(50) NOT NULL DEFAULT 'NULL',
+  'description' VARCHAR(500) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -78,9 +79,9 @@ CREATE TABLE `specialties` (
 -- 
 -- ---
 
-DROP TABLE IF EXISTS `Business Specialties`;
+DROP TABLE IF EXISTS `Business_specialties`;
     
-CREATE TABLE `Business Specialties` (
+CREATE TABLE `Business_specialties` (
   `id` INTEGER NULL AUTO_INCREMENT DEFAULT NULL,
   `id_specialties` INTEGER NULL DEFAULT NULL,
   `id_business profile` INTEGER NULL DEFAULT NULL,
@@ -114,8 +115,8 @@ INSERT INTO `User` (`username`,`password`,`first name`,`last name`,`email`) VALU
 ('123','123','Robin','Kuehn','Robin@me.com');
 INSERT INTO `Comments` (`content`,`rating`,`id_User`,`id_business profile`) VALUES
 ('I enjoyed spending the afternoon in the pool!!',5,1,1);
-INSERT INTO `business profile` (`ownership`,`dietary options`,`social events`,`number of staff`,`capacity`,`Medicare`,`average years of experience`,`facility name`) VALUES
-('Government','Vegetarian Kosher','Yes',30,100,'Yes',5,'Golden Gate Nursing Home');
+INSERT INTO `business profile` (`ownership`,`dietary options`,`social events`,`number of staff`,`capacity`,`Medicare`,`average years of experience`,`facility name`, 'description') VALUES
+('Government','Vegetarian Kosher','Yes',30,100,'Yes',5,'Golden Gate Nursing Home', 'we are the cleanest nursing home on earth!!!! just come!!!');
 INSERT INTO `specialties` (`name`) VALUES
 ('Alzheimers');
 INSERT INTO `Business Specialties` (`id_specialties`,`id_business profile`) VALUES
