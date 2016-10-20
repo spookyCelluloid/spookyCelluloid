@@ -10,6 +10,8 @@
 -- 
 -- ---
 
+USE spookyCelluloid;
+
 DROP TABLE IF EXISTS `User`;
     
 CREATE TABLE `User` (
