@@ -13,8 +13,21 @@ app.use(parser.json());
 app.get('/', function(req, res) {
   model.facility.getFacilityList(function(err, results) {
     if (err) {
-      res.statusCode(500).end();
+      res.send(err);
+      // res.statusCode(500).end();
     } else {
+      res.json(results);
+    }
+  })
+});
+
+app.get('/facility', function(req, res) {
+  model.facility.getFacilityProfile(2, function(err, results) {
+    if (err) {
+      res.send(err);
+      // res.statusCode(500).end();
+    } else {
+      console.log(results);
       res.json(results);
     }
   })
