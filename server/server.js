@@ -11,8 +11,12 @@ app.use(parser.json());
 
 
 app.get('/', function(req, res) {
-  model.facility.getFacilityList(function(results) {
-    res.json(results);
+  model.facility.getFacilityList(function(err, results) {
+    if (err) {
+      res.statusCode(500).end();
+    } else {
+      res.json(results);
+    }
   })
 });
 
