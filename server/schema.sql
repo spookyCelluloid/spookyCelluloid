@@ -147,7 +147,7 @@ INSERT INTO `Specialties` (`name`) VALUES
 ('Colostomy Care'),
 ('Catheter Care'),
 ('IV Therapy'),
-('Dressings and Care for Pressure UIcers'),
+('Dressings and Care for Pressure Ulcers'),
 ('Tube Feedings'),
 ('Oxygen and Respiratory Therapy'),
 ('Care During Final Stages of Illness Such as Cancer'),
