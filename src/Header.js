@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SearchForm from './SearchForm';
 
 class Header extends Component {
   constructor(props) {
@@ -10,8 +11,7 @@ class Header extends Component {
       <div>
         <div>
           <h1>Nursing Home App</h1>
-          <input placeholder='search by name or city' name='searchValue'/>
-          <input type='submit'/>
+          <SearchForm />
         </div>
         <div class='featuredCareFacilities'>
           <div class='facility1'>
@@ -46,53 +46,6 @@ class Header extends Component {
     )
   }
 }
-
-class searchForm extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-  render() {
-    return (
-      React.createElement('form', {classname: 'searchForm'},
-        React.createElement('input', {
-          type: 'text',
-          placeholder: 'search by name or city',
-          value: this.props.value.name
-        }))
-      <SearchLandingPage searchValue = {input.value}/>
-    )
-  }
-}
-
-
-// // different example of creating a form
-// class searchForm extends Component {
-//   constructor(props) {
-//     super(props);
-//   }
-
-//   getInitialState: function() {
-//     return {
-//       userInput: ''
-//     }
-//   },
-
-//   handleUserInput: function(e) {
-//     this.setState({
-//       userInput: e.target.value
-//     });
-//   },
-
-//   render: function() {
-//     return (
-//       <div>
-//         <input type='text' placeholder: 'search by name or city' value={this.state.userInput} onChange={this.handleUserInput} />
-//       </div>
-//     );
-//   };
-// }
-
 
 export default Header;
 
