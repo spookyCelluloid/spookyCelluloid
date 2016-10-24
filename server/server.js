@@ -5,24 +5,25 @@ var model = require('./db_models/index.js');
 var app = express();
 
 
-
 app.use(parser.json());
 app.use((req, res, next) => {
   console.log(req.method + ' on ' + req.url);
   next();
 })
+app.use(express.static('client'));
 
 
 
 app.get('/', function(req, res) {
-  var queryString = req.query;
-  model.facility.getFacilityList(queryString, function(err, results) {
-    if (err) {
-      res.send(err);
-    } else {
-      res.json(results);
-    }
-  })
+  res.sendFile('/index.html');
+  // var queryString = req.query;
+  // model.facility.getFacilityList(queryString, function(err, results) {
+  //   if (err) {
+  //     res.send(err);
+  //   } else {
+  //     res.json(results);
+  //   }
+  // })
 });
 
 app.get('/facility', function(req, res) {
