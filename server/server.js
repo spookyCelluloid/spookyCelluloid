@@ -7,14 +7,18 @@ var app = express();
 
 
 app.use(parser.json());
+app.use((req, res, next) => {
+  console.log(req.method + ' on ' + req.url);
+  next();
+})
 
 
 
 app.get('/', function(req, res) {
-  model.facility.getFacilityList(function(err, results) {
+  var queryString = req.query;
+  model.facility.getFacilityList(queryString, function(err, results) {
     if (err) {
       res.send(err);
-      // res.statusCode(500).end();
     } else {
       res.json(results);
     }
@@ -22,15 +26,25 @@ app.get('/', function(req, res) {
 });
 
 app.get('/facility', function(req, res) {
-  model.facility.getFacilityProfile(2, function(err, results) {
+  var facilityID = req.query.id;
+  model.facility.getFacilityProfile(facilityID, function(err, results) {
     if (err) {
       res.send(err);
-      // res.statusCode(500).end();
-    } else {
-      console.log(results);
       res.json(results);
     }
   })
+});
+
+app.get('/query', function(req, res) {
+  var queryString = req.query;
+
+  model.facility.getFilteredList(queryString, function(err, results) {
+    if (err) {
+      res.send(err);
+    } else {
+      res.json(results);
+    }
+  });
 });
 
 app.post('/businessprofile', function(req, res) {

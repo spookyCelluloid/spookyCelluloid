@@ -1,12 +1,14 @@
 var db = require('../db/db_index.js');
+var Util = require('../Util/util.js');
 
 module.exports = {
   facility: {
-    getFacilityList: function(callback) {
+    getFacilityListj: function(city, callback) {
       //queries the database for all nursing homes  
-      var facilityListQuery = 'SELECT b.id, b.facility_name, b.phone_number, b.street, b.city, b.state, b.zip, b.Medicare, b.image_url, AVG(c.rating) AS average_rating, COUNT(c.rating) AS num_ratings ' + 
-                              'FROM Business_profile b JOIN Reviews c ' + 
-                              'ON (b.id = c.id_business_profile) ' +
+      var facilityListQuery = 'SELECT b.id, b.facility_name, b.phone_number, b.street, b.city, b.state, b.zip, b.Medicare, b.image_url, AVG(r.rating) AS average_rating, COUNT(r.rating) AS num_ratings ' + 
+                              'FROM Business_profile b JOIN Reviews r ' + 
+                              'ON (b.id = r.id_business_profile) ' +
+                              'WHERE b.city = ' + city + ' ' +
                               'GROUP BY b.id';
                 
       db.query(facilityListQuery, function(err, listResults) {
@@ -92,6 +94,66 @@ module.exports = {
 
       })
 
+    },
+
+    getFacilityList: function(query, callback) {
+      var filters = Util.createFilter(query);
+      var facilityListQuery = 'SELECT b.id, b.facility_name, b.phone_number, b.street, b.city, b.state, b.zip, b.Medicare, b.image_url, AVG(r.rating) AS average_rating, COUNT(r.rating) AS num_ratings ' + 
+                              'FROM Business_profile b JOIN Reviews r ' + 
+                              'ON (b.id = r.id_business_profile) ' +
+                              (filters.string ? 'WHERE ' + filters.string + ' ' : '') +
+                              'GROUP BY b.id';
+                
+      db.query(facilityListQuery, function(err, listResults) {
+        if (err) {
+          console.log('err with getFilteredList query');
+          callback(err);
+          return;
+        }
+
+        // remove facilities with rating less than specified
+        if (filters.rating) {
+          listResults = listResults.filter(function(facility) {
+            return (filters.rating.average_rating ? facility.average_rating >= filters.rating.average_rating : true) && 
+                   (filters.rating.num_ratings ? facility.num_ratings >= filters.rating.num_ratings : true);
+          });
+        }
+
+        // queries the db for specialities
+        var specialtyQuery = 'SELECT b.id, s.name ' +
+                          'FROM Business_profile b, Business_specialties j, Specialties s ' +
+                          'WHERE b.id = j.id_business_profile && j.id_specialties = s.id';
+
+        //queries the database for all the ratings 
+        db.query(specialtyQuery, function(err, ratingResults) {
+          if (err) {
+            console.log('err with specialty query', err);
+            callback(err);
+            return;
+          }
+
+         
+          //iterate through the array of facility objects, adds a key called specialities and adds in an array of speciality values
+          for (var i = 0; i < listResults.length; i++) {
+            listResults[i].specialites = ratingResults.filter(function(rating) {
+              return rating.id === listResults[i].id;
+            }).map(function(rating) {
+              return rating.name;
+            })
+          }
+
+          callback(null, listResults);
+        });
+
+      });
     }
   }
 }
+
+
+
+
+
+
+
+
