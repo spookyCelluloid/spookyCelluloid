@@ -1,5 +1,7 @@
 var express = require('express');
 var parser = require('body-parser');
+var db = require('./db/db_index.js');
+var model = require('./db_models/index.js');
 var app = express();
 
 
@@ -9,7 +11,26 @@ app.use(parser.json());
 
 
 app.get('/', function(req, res) {
-  res.send('hello');
+  model.facility.getFacilityList(function(err, results) {
+    if (err) {
+      res.send(err);
+      // res.statusCode(500).end();
+    } else {
+      res.json(results);
+    }
+  })
+});
+
+app.get('/facility', function(req, res) {
+  model.facility.getFacilityProfile(2, function(err, results) {
+    if (err) {
+      res.send(err);
+      // res.statusCode(500).end();
+    } else {
+      console.log(results);
+      res.json(results);
+    }
+  })
 });
 
 app.post('/businessprofile', function(req, res) {

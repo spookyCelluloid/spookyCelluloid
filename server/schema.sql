@@ -40,7 +40,10 @@ CREATE TABLE `Business_profile` (
   `facility_name` VARCHAR(50) NOT NULL DEFAULT 'NULL',
   `description` VARCHAR(1000) NOT NULL DEFAULT 'NULL',
   `phone_number` VARCHAR(14) NOT NULL DEFAULT 'NULL',
-  `address` VARCHAR(100) NOT NULL DEFAULT 'NULL',
+  `street` VARCHAR(100) NOT NULL DEFAULT 'NULL',
+  `city` VARCHAR(50) NOT NULL DEFAULT 'NULL',
+  `state` VARCHAR(20) NOT NULL DEFAULT 'NULL',
+  `zip` VARCHAR(10) NOT NULL DEFAULT 'NULL',
   `ownership` VARCHAR(25) NOT NULL DEFAULT 'NULL',
   `dietary_options` VARCHAR(100) NOT NULL DEFAULT 'NULL',
   `social_events` VARCHAR(3) NOT NULL DEFAULT 'NO',
@@ -49,6 +52,7 @@ CREATE TABLE `Business_profile` (
   `Medicare` VARCHAR(3) NOT NULL DEFAULT 'YES',
   `average_years_of_experience` INTEGER(2) NOT NULL DEFAULT 0,
   `cost_per_day` INTEGER(4) NULL,
+  `image_url` VARCHAR(250) NOT NULL,
   PRIMARY KEY (`id`)
 );
 
@@ -66,13 +70,13 @@ CREATE TABLE `Specialties` (
 );
 
 -- ---
--- Table 'Comments'
+-- Table 'Reviews'
 -- 
 -- ---
 
-DROP TABLE IF EXISTS `Comments`;
+DROP TABLE IF EXISTS `Reviews`;
     
-CREATE TABLE `Comments` (
+CREATE TABLE `Reviews` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `content` VARCHAR(2500) NULL DEFAULT NULL,
   `date` VARCHAR(10) NOT NULL,
@@ -100,8 +104,8 @@ CREATE TABLE `Business_specialties` (
 -- Foreign Keys 
 -- ---
 
-ALTER TABLE `Comments` ADD FOREIGN KEY (id_User) REFERENCES `User` (`id`);
-ALTER TABLE `Comments` ADD FOREIGN KEY (id_business_profile) REFERENCES `Business_profile` (`id`);
+ALTER TABLE `Reviews` ADD FOREIGN KEY (id_User) REFERENCES `User` (`id`);
+ALTER TABLE `Reviews` ADD FOREIGN KEY (id_business_profile) REFERENCES `Business_profile` (`id`);
 ALTER TABLE `Business_specialties` ADD FOREIGN KEY (id_specialties) REFERENCES `Specialties` (`id`);
 ALTER TABLE `Business_specialties` ADD FOREIGN KEY (id_business_profile) REFERENCES `Business_profile` (`id`);
 
@@ -110,7 +114,7 @@ ALTER TABLE `Business_specialties` ADD FOREIGN KEY (id_business_profile) REFEREN
 -- ---
 
 -- ALTER TABLE `User` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
--- ALTER TABLE `Comments` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+-- ALTER TABLE `Reviews` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 -- ALTER TABLE `Business_profile` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 -- ALTER TABLE `Specialties` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 -- ALTER TABLE `Business_specialties` ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -125,13 +129,14 @@ INSERT INTO `User` (`username`,`password`,`first_name`,`last_name`) VALUES
 ('jennifer','123','Jennifer','H.'),
 ('blowerof','123','Blowerof','W.');
 
-INSERT INTO `Business_profile` (`ownership`,`dietary_options`,`social_events`,`staff_hr`,`capacity`,`Medicare`,`average_years_of_experience`,`facility_name`,`description`, `phone_number`, `address`, `cost_per_day`) VALUES
-('For-profit','Vegetarian Kosher','Yes',1.73,39,'Yes',5,'Bancroft Convalescent Hospital', 'Well known for top quality care since 1962, Bancroft Convalescent Hospital is “Simply the Best. Whatever it Takes!” The facility provides skilled care which meets a wide variety of needs. Care can be provided for post-hospital rehabilitation on a short-term basis, or for those who may be totally dependent, requiring long-term care.\nOur staff is a happy group who enjoy a cooperative spirit of working together.  They appreciate the small patient assignments which enable them to provide the best possible care.  Please read the testimonial letters and come see for yourself!', '(510) 483-1680', '1475 Bancroft Avenue, San Leandro, California 94577', 310),
 
-('For-profit','Provide meals to meet specific dietary and therapeutic needs, according to physician orders.','Yes',2.85,59,'Yes',3.7,'Linda Mar Care Center', 'Linda Mar Rehabilitation is a skilled nursing facility in sunny Pacifica, California. We provide 24-hour skilled care and rehabilitation services in a comfortable and friendly environment. At Linda Mar Rehabilitation, caring is our main concern. We believe the most effective way to provide compassionate care is to maintain high medical integrity, build a spirit of teamwork among staff, and maintain clean, beautiful surroundings for our patients and their visitors. We strive to make the transition into our facility as seamless as possible by providing each guest with an environment where they feel informed and comfortable. Our team of qualified professionals helps patients recover from surgery, injury, or serious illness. We understand the importance of creating a comfortable and nurturing atmosphere, whether our patients are here for short-term treatment or long-term care.', '(650) 359-4800', '751 San Pedro Terrace Road, Pacifica, California 94044', NULL);
+INSERT INTO `Business_profile` (`ownership`,`dietary_options`,`social_events`,`staff_hr`,`capacity`,`Medicare`,`average_years_of_experience`,`facility_name`,`description`, `phone_number`, `street`, `city`, `state`, `zip`, `cost_per_day`,`image_url`) VALUES
+('For-profit','Vegetarian Kosher','Yes',1.73,39,'Yes',5,'Bancroft Convalescent Hospital', 'Well known for top quality care since 1962, Bancroft Convalescent Hospital is “Simply the Best. Whatever it Takes!” The facility provides skilled care which meets a wide variety of needs. Care can be provided for post-hospital rehabilitation on a short-term basis, or for those who may be totally dependent, requiring long-term care.\nOur staff is a happy group who enjoy a cooperative spirit of working together.  They appreciate the small patient assignments which enable them to provide the best possible care.  Please read the testimonial letters and come see for yourself!', '(510) 483-1680', '1475 Bancroft Avenue', 'San Leandro', 'California', '94577', 310, 'http://www.nursinghomes.com/wp-content/tools/TimThumb.php?src=/wp-content/uploads/property-images/055107/055107__4.jpg&w=800&h=800zc=3'),
+
+('For-profit','Provide meals to meet specific dietary and therapeutic needs, according to physician orders.','Yes',2.85,59,'Yes',3.7,'Linda Mar Care Center', 'Linda Mar Rehabilitation is a skilled nursing facility in sunny Pacifica, California. We provide 24-hour skilled care and rehabilitation services in a comfortable and friendly environment. At Linda Mar Rehabilitation, caring is our main concern. We believe the most effective way to provide compassionate care is to maintain high medical integrity, build a spirit of teamwork among staff, and maintain clean, beautiful surroundings for our patients and their visitors. We strive to make the transition into our facility as seamless as possible by providing each guest with an environment where they feel informed and comfortable. Our team of qualified professionals helps patients recover from surgery, injury, or serious illness. We understand the importance of creating a comfortable and nurturing atmosphere, whether our patients are here for short-term treatment or long-term care.', '(650) 359-4800', '751 San Pedro Terrace Road', 'Pacifica', 'California', '94044', NULL, 'http://www.lucilleslist.com/sites/default/files/styles/community_image/public/communities_images/LindaMarSM2_13.jpg?itok=uiACQf48');
 
 
-INSERT INTO `Comments` (`content`,`rating`,`id_User`,`id_business_profile`,`date`) VALUES
+INSERT INTO `Reviews` (`content`,`rating`,`id_User`,`id_business_profile`,`date`) VALUES
 ('This review is long overdue. Over a half a year ago, my mother spent six weeks at Pacifica Nursing and Rehab after having spinal surgery. Before she was released from the hospital, I had been reading Yelp reviews of the other skilled nursing facilities in the area, and I was horrified by the Dickensian horrors I read about.\nAt that point, it was unclear whether Pacifica Nursing and Rehab would have a vacant bed to take my mom, so I can\'t tell you what a huge relief it was when her health care provider was able to get her into this place, and not one of its awful competitors.\nThe staff here are amazing people, and seeing everything they did for my mother, I have learned to truly respect and revere certified nursing assistants. CNAs don\'t get paid enough, yet they are truly the unsung heroes of this industry. And Pacifica Nursing and Rehab has the nicest, most hard-working CNAs you could ever hope to meet.\nAlso, special shout out to Amy in physical therapy. My mom was probably the most difficult customer she\'d had in years, but when it was time for mom to come home, Amy gave her a hug and told her how much she had enjoyed working with her.\nIf you have a loved one who needs to spend some time in a SNF, this is the place for them to be.',5,1,1,'10/31/2015'),
 
 ('I just spent two weeks here after having my knee replacement.  Living in the city there are hills and most apartment buildings were built in the 1930\'s which has stairs!! In 2014 I found out my right knee was bone on bone.  I knew I was going to have surgery so I spent 2015 looking at options and surgeons.  What I liked was on site physical and occupational therapy. In order for me to have my confidence to return home I had a number of items to check off my list.  This department worked with me every day:  5 days one hour with physical and occupational therapist.  This was so crucial for me to begin my healing process.\nThe team of nurses were awesome!  They were right on top of their game.  They had activities for us in the activity room which was a nice surprise\nespecially the cooking and baking class by Ruby.  I loved the part of getting to know the nurse as individuals and stories that we shared when I would have my 4am Meds and blood work.\nMeals were huge and delicious!!  Being there for two weeks I only saw one breakfast item twice!\nI am now back home feeling more confident and able to take care of myself in a safe environment.',5,2,1,'05/17/2016'),
@@ -146,7 +151,7 @@ INSERT INTO `Specialties` (`name`) VALUES
 ('Colostomy Care'),
 ('Catheter Care'),
 ('IV Therapy'),
-('Dressings and Care for Pressure UIcers'),
+('Dressings and Care for Pressure Ulcers'),
 ('Tube Feedings'),
 ('Oxygen and Respiratory Therapy'),
 ('Care During Final Stages of Illness Such as Cancer'),
