@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -13,14 +14,27 @@ class SearchForm extends Component {
   }
 
   handleSubmit(event) {
-    console.log("Text field value is: " + this.state.value);
     event.preventDefault();
+    console.log("Text field value is: " + this.state.value);
+
+
+
+    $.ajax({
+      url: 'http://localhost:8080/?search="' + this.state.value + '"',
+      type: 'GET',
+      success: data => {
+        console.log('success!!!!!!!!', data);
+      },
+      error: data => {
+        console.error('errror with submit get', data);
+      }
+    });
   }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={(e) => this.handleSubmit(e)}>
           <input type="text" placeholder='search by name or city' value={this.state.value} onChange={this.handleChange} />
           <button type="submit">Submit</button>
         </form>
@@ -30,3 +44,11 @@ class SearchForm extends Component {
 }
 
 export default SearchForm;
+
+
+
+     //  <form onSubmit={this.handleSubmit.bind(this)} className="MyForm">
+     //    <input className='answer' type="text" name="response" ref={(i) => this._query = i}/>
+     //    <button type="submit">Submit</button>
+     // </form>
+     //  
