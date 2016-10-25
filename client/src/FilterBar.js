@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactSlider from 'react-slider';
+import Slider from 'bootstrap-slider';
 
 
 const divStyle = {
@@ -19,6 +19,8 @@ const divStyle2 = {
 
 
 
+
+
 class Filter extends Component {
   constructor(props){
     super(props);
@@ -27,16 +29,17 @@ class Filter extends Component {
       Yes:[],
       Ownership: [],
       num_ratings: 0,
-      avgerage_rating: 0,
+      average_rating: 0,
       average_years_of_experience: 0,
       capacity: 0
-    }
+    };
+
   }
 
   createQueryString() {
     var query = '';
 
-    if (this.state.Specialties.length) {
+    if (this.state.Specialties.length === 0) {
       query = 'specialties=';
 
       this.state.Specialties.forEach( (specialty) => {
@@ -46,7 +49,7 @@ class Filter extends Component {
       query = query.slice(0, query.length-1);
     }
 
-    if (this.state.Yes.length) {
+    if (this.state.Yes.length === 0) {
 
       this.state.Yes.forEach( (yesValue) => {
         query += '&' + yesValue + '="Yes"';
@@ -54,7 +57,7 @@ class Filter extends Component {
 
     }
 
-    if (this.state.Ownership.length) {
+    if (this.state.Ownership.length === 0) {
       query += '&ownership=';
 
       this.state.Ownership.forEach( (whoOwns) => {
@@ -62,6 +65,10 @@ class Filter extends Component {
       })
 
       query = query.slice(0, query.length-1);
+    }
+
+    if (this.state.average_rating > 0) {
+      query += '&average_rating=' + this.state.average_rating;
     }
 
     console.log(query);
@@ -79,13 +86,20 @@ class Filter extends Component {
         temp.push(value);
         this.setState({filtername: temp});
       }
+    } else if(filtername === 'average_rating') {
+      this.setState({average_rating: value});
     } 
 
 
-    console.log(this.state);
+
+
+    // console.log(this.state);
+
+    // console.log(filtername, value);
   }
 
   render() {
+
     return (
       <div style={divStyle}>
 
@@ -126,8 +140,8 @@ class Filter extends Component {
         </div>
 
 
-        <div className='slideBar' style={divStyle}> Ratings
-          <ReactSlider defaultValue={5} />
+        <div className='slideBar Slider' style={divStyle}> Ratings: <span>{this.state.average_rating}</span>
+          <input type='range' defaultValue={0} max={5} step={1} style={{'width': '100px'}} onChange={(event) => this.updateFilter('average_rating', event.target.value)}/>
         </div>
         <button onClick={() => this.createQueryString()}> Filter </button>
       </div>

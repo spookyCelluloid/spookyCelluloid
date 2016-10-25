@@ -1,5 +1,11 @@
 module.exports = {
   createFilter: function(queryString) {
+
+    if (Object.keys(queryString).length === 0) {
+      console.log('this is an empty object');
+      return {}; 
+    }
+
     var filter = {};
     filter.string = '';
     // filter.rating = {};

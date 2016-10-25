@@ -98,6 +98,8 @@ module.exports = {
 
     getFacilityList: function(query, callback) {
       var filters = Util.createFilter(query);
+
+      console.log('before query', filters);
       var facilityListQuery = 'SELECT b.id, b.facility_name, b.phone_number, b.street, b.city, b.state, b.zip, b.Medicare, b.image_url, AVG(r.rating) AS average_rating, COUNT(r.rating) AS num_ratings ' + 
                               'FROM Business_profile b JOIN Reviews r ' + 
                               'ON (b.id = r.id_business_profile) ' +
@@ -143,13 +145,15 @@ module.exports = {
           }
 
           // filter out facilities that don't have all the specialties
-          var specialtyList = query.specialties.slice(1, query.specialties.length - 1).split('","');
+          if (query.specialties) {
+            var specialtyList = query.specialties.slice(1, query.specialties.length - 1).split('","');
 
-          listResults = listResults.filter(function(facility) {
-            return (specialtyList.every(function(specialty) {
-                    return facility.specialties.indexOf(specialty) > -1;
-                   }));
-          })
+            listResults = listResults.filter(function(facility) {
+              return (specialtyList.every(function(specialty) {
+                      return facility.specialties.indexOf(specialty) > -1;
+                     }));
+            })
+          }
 
           callback(null, listResults);
         });
