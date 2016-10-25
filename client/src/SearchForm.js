@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import $ from 'jquery';
+import ProfileCard from './ProfileCard.js';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class SearchForm extends Component {
     this.setState({value: event.target.value});
   }
 
+
   handleSubmit(event) {
     event.preventDefault();
     console.log("Text field value is: " + this.state.value);
@@ -24,6 +26,7 @@ class SearchForm extends Component {
       type: 'GET',
       success: data => {
         console.log('success!!!!!!!!', data);
+        this.props.handleResponse(data);
       },
       error: data => {
         console.error('errror with submit get', data);
