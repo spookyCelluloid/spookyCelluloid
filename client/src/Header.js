@@ -20,33 +20,33 @@ class Header extends Component {
           <h1>Nursing Home App</h1>
           <SearchForm handleResponse={this.handleResponse}/>
         </div>
-        <div class='featuredCareFacilities'>
-          <div class='facility1'>
+        <div className='featuredCareFacilities'>
+          <div className='facility1'>
 
           </div>
-          <div class='facility2'>
+          <div className='facility2'>
 
           </div>
-          <div class='facility3'>
-
-          </div>
-        </div>
-        <div class='featuredQuotes'>
-          <div class='quote1'>
-
-          </div>
-          <div class='quote2'>
-
-          </div>
-          <div class='quote3'>
+          <div className='facility3'>
 
           </div>
         </div>
+        <div className='featuredQuotes'>
+          <div className='quote1'>
 
-        <div class='footer'> 
-          <a href ='#'>Home</a>
-          <a href ='#'>About Us</a>
-          <a href ='#'>Contact Us</a>
+          </div>
+          <div className='quote2'>
+
+          </div>
+          <div className='quote3'>
+
+          </div>
+        </div>
+
+        <div className='footer'> 
+          <a href='#'>Home</a>
+          <a href='#'>About Us</a>
+          <a href='#'>Contact Us</a>
         </div>
 
       </div>
