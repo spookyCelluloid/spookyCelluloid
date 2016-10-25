@@ -24,3 +24,9 @@ class SearchLandingPage extends Component {
 } 
 
 export default SearchLandingPage;
+
+
+
+      // {this.props.map(searchResult =>
+      //       <ProfileCard {}/>
+      // )}
