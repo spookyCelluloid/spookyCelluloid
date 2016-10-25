@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import ProfileCard from './ProfileCard.js'
+
+import ProfileCard from './ProfileCard.js';
+
 
 class SearchLandingPage extends Component {
   constructor(props) {
@@ -27,6 +29,8 @@ export default SearchLandingPage;
 
 
 
-      // {this.props.map(searchResult => 
+
+      // {this.props.map(searchResult =>
+
       //       <ProfileCard {}/>
       // )}

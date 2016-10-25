@@ -1,5 +1,11 @@
 module.exports = {
   createFilter: function(queryString) {
+
+    if (Object.keys(queryString).length === 0) {
+      console.log('this is an empty object');
+      return {}; 
+    }
+
     var filter = {};
     filter.string = '';
     // filter.rating = {};
@@ -7,10 +13,14 @@ module.exports = {
     for (var key in queryString) {
       if (key === 'specialties') {
 
-        filter.string += ' AND b.id in (SELECT bs.id_business_profile ' +
-                'FROM Specialties s JOIN Business_specialties bs ' +
-                'ON (s.id = bs.id_specialties) ' +
-                'WHERE s.name in (' + queryString[key] + '))';
+        // filter.string += ' AND b.id in (SELECT bs.id_business_profile ' +
+        //         'FROM Specialties s JOIN Business_specialties bs ' +
+        //         'ON (s.id = bs.id_specialties) ' +
+        //         'WHERE s.name in (' + queryString[key] + '))';
+
+      } else if (key === 'ownership') {
+
+        filter.string += ' AND b.ownership in (' + queryString[key] + ')';
 
       } else if (key === 'search') {
 
