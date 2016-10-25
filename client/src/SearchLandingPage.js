@@ -6,13 +6,14 @@ import ProfileCard from './ProfileCard.js';
 class SearchLandingPage extends Component {
   constructor(props) {
     super(props)
+    console.log('********************SLP', this.props.searchData);
   }
   // render commented out because currently not passing in any props
   render() {
     return (
       <div>
 
-        <ProfileCard data={this.props.searchData}/>
+        <ProfileCard searchData={this.props.searchData}/>
 
         <div class='footer'> 
           <a href='#'>Home</a>
@@ -27,10 +28,3 @@ class SearchLandingPage extends Component {
 
 export default SearchLandingPage;
 
-
-
-
-      // {this.props.map(searchResult =>
-
-      //       <ProfileCard {}/>
-      // )}
