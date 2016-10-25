@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Filter from './FilterBar';
 
 class SearchLandingPage extends Component {
   constructor(props) {
@@ -28,6 +29,12 @@ class SearchLandingPage extends Component {
   //     </div>
   //   )
   // }
+
+  render() {
+    return (
+      <Filter />
+      )
+  }
 } 
 
 export default SearchLandingPage;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
 
+
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -11,6 +12,7 @@ class Header extends Component {
       <div>
         <div>
           <h1>Nursing Home App</h1>
+
           <SearchForm />
         </div>
         <div class='featuredCareFacilities'>
