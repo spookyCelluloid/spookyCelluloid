@@ -20,7 +20,7 @@ class SearchForm extends Component {
 
 
     $.ajax({
-      url: 'http://localhost:8080/?zip="' + this.state.value + '"',
+      url: 'http://localhost:8080/?search="' + this.state.value + '"',
       type: 'GET',
       success: data => {
         console.log('success!!!!!!!!', data);
