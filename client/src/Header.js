@@ -1,10 +1,16 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
 
-
 class Header extends Component {
   constructor(props) {
     super(props)
+    console.log(props);
+    this.handleResponse = this.handleResponse.bind(this);
+  }
+
+  handleResponse(data) {
+    console.log('handleResponse', data);
+    this.props.handleResponseApp(data);
   }
 
   render() {
@@ -12,8 +18,7 @@ class Header extends Component {
       <div>
         <div>
           <h1>Nursing Home App</h1>
-
-          <SearchForm />
+          <SearchForm handleResponse={this.handleResponse}/>
         </div>
         <div class='featuredCareFacilities'>
           <div class='facility1'>
