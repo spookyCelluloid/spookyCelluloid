@@ -43,6 +43,17 @@ class App extends Component {
 
     axios.get('http://localhost:8080/facility?id=' + facilityID)
       .then(({data}) => {
+        var sum = 0;
+        data.reviews.forEach((review) => {
+          sum += review.rating;
+        });
+
+        var averageRating = Math.round(sum / data.reviews.length);
+
+        data.averageRating = averageRating;
+
+        console.log(data);
+
         this.setState({currentProfile: data});
         browserHistory.push('/FacilityProfile');
       })
