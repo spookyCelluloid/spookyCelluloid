@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import Header from './Header'
 import SearchLandingPage from './SearchLandingPage'
-import Mission from './Mission'
 import SearchForm from './SearchForm';
-import ProfileCard from './ProfileCard';
+import FilterBar from './FilterBar'
+
 
 class App extends Component {
   constructor(props) {
@@ -41,9 +40,23 @@ class App extends Component {
    
   }
 
+  filterResults(queryString) {
+    $.ajax({
+      url: 'http://localhost:8080/?' + queryString,
+      type: 'GET',
+      success: data => {
+        this.setState({data})
+        console.log('success with filtering!!!!!!!!', data);
+      },
+      error: data => {
+        console.error('errror with submit get', data);
+      }
+    });
+  }
+
   renderData() {
     if (this.state.data.length) {
-      return <SearchLandingPage searchData={this.state.data[0]}/>
+      return <SearchLandingPage filterResults={this.filterResults.bind(this)} searchData={this.state.data}/>
     }
   }
 
@@ -54,6 +67,7 @@ class App extends Component {
           <SearchForm queryDatabase={this.queryDatabase.bind(this)} handleChange ={this.handleChange.bind(this)} />
         </div>
         {this.renderData()}
+
       </div>
     );
   }

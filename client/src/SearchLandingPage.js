@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import ProfileCard from './ProfileCard.js';
+import FilterBar from './FilterBar'
 
 
 class SearchLandingPage extends Component {
@@ -12,10 +13,15 @@ class SearchLandingPage extends Component {
   render() {
     return (
       <div>
+        <div>{
+          this.props.searchData.map((nursingHome) => {
+            return (<ProfileCard key={nursingHome.id} searchData={nursingHome}/>)
+          })
+        }</div>
 
-        <ProfileCard searchData={this.props.searchData}/>
+        <FilterBar filterResults={this.props.filterResults} />
 
-        <div class='footer'> 
+        <div className='footer'> 
           <a href='#'>Home</a>
           <a href='#'>About Us</a>
           <a href='#'>Contact Us</a>
