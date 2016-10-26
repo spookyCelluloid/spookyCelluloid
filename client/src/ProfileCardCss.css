@@ -1,11 +1,47 @@
 .profileCard {
-  border: 2px solid blue;
-  font-family: 'Oxygen', sans-serif;
-  width: 700px;
+  border: 2px solid #123D99;
+  height: 200px;
+  margin-left: 30px;
+  margin-bottom: 30px;
+}
+
+.image {
+  height: 200px;
+  padding-left: 0px;
+  padding-right: 0px;
+  position: relative;
+
+}
+
+.info {
+  margin-top: 2px;
+  line-height: 8px;
 }
 
 .profileCardImg {
-  width: 200px;
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  margin: 10%
+}
+
+.starRating input {
+  display: none;
+  
+}
+
+.info {
   height: 200px;
-  float: left;
+  padding-right: 0px
+}
+
+.profileCard span {
+  border: 1px solid green;
+  margin: 2px;
+  line-height: 12px;
+}
+
+.starRating {
+  width: 20px;
+  height: 20px;
 }
