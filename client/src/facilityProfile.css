@@ -5,11 +5,20 @@
 }
 
 .imageBorder {
+  box-sizing: border-box;
   border: 2px;
   border-style: solid;
   color: #123d99;
   border-radius: 5px;
   border-width: 100%;
+}
+
+.starRating input{
+  display: none;
+}
+
+.headerStar input {
+  display: none;
 }
 
 .title {

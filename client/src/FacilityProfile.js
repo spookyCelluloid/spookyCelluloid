@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import StarRating from 'react-star-rating';
 require('./facilityProfile.css');
 
-
-
 const FacilityProfile = ({currentProfile}) => (
 
   <div>
     <div className='title'>
-        <h2 className='facilityName'>{currentProfile.facility_name} <StarRating name='mainRating' rating={4}/></h2>
+        <h2 className='facilityName'>{currentProfile.facility_name}</h2>
+        <h2 className='headerStar'><StarRating name='mainRating' rating={currentProfile.averageRating}/></h2>
     </div>
     <div className='mainImage'>
       <div className='imageBorder'>
