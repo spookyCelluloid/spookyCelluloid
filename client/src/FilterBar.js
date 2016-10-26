@@ -1,21 +1,7 @@
 import React, { Component } from 'react';
-import Slider from 'bootstrap-slider';
+require('./main.css');
 
 
-const divStyle = {
-  color: 'blue',
-  border: '2px solid blue'
-};
-
-const divStyle1 = {
-  color: 'red',
-  border: '2px solid red'
-};
-
-const divStyle2 = {
-  color: 'orange',
-  border: '2px solid orange'
-};
 
 
 
@@ -106,9 +92,9 @@ class Filter extends Component {
   render() {
 
     return (
-      <div style={divStyle}>
+      <div className='sideBar'>
 
-        <div className='YesNo' style={divStyle1}>
+        <div className='YesNo'>
           <ul>
             <li><input type="checkbox" value='Medicare' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Accepts Medicare</li>
             <li><input type="checkbox" value='social_events' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Social Events</li>
@@ -116,7 +102,7 @@ class Filter extends Component {
         </div>
 
 
-        <div className='ownership' style={divStyle1}>Ownership
+        <div className='ownership' >Ownership
           <ul>
             <li><input type="checkbox" value='Government' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Government</li>
             <li><input type="checkbox" value='For-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> For-Profit</li>
@@ -125,7 +111,7 @@ class Filter extends Component {
         </div>
 
 
-        <div className='Specialties' style={divStyle2}>Specialties
+        <div className='Specialties' >Specialties
           <ul>
             <li><input type="checkbox" value='Fractured Hips' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Fractured Hips</li>
             <li><input type="checkbox" value='Strokes' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Strokes</li>
@@ -145,7 +131,7 @@ class Filter extends Component {
         </div>
 
 
-        <div className='slideBar Slider' style={divStyle}> Ratings: <span>{this.state.average_rating}</span>
+        <div className='slideBar Slider' > Ratings: <span>{this.state.average_rating}</span>
           <input type='range' defaultValue={0} max={5} step={1} style={{'width': '100px'}} onChange={(event) => this.updateFilter('average_rating', event.target.value)}/>
         </div>
         <button onClick={() => this.createQueryString()}> Filter </button>
