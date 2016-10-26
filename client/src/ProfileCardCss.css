@@ -1,0 +1,11 @@
+.profileCard {
+  border: 2px solid blue;
+  font-family: 'Oxygen', sans-serif;
+  width: 700px;
+}
+
+.profileCardImg {
+  width: 200px;
+  height: 200px;
+  float: left;
+}
