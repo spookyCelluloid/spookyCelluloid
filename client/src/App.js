@@ -43,7 +43,6 @@ class App extends Component {
 
     axios.get('http://localhost:8080/facility?id=' + facilityID)
       .then(({data}) => {
-        console.log(data);
         this.setState({currentProfile: data});
         browserHistory.push('/FacilityProfile');
       })
@@ -59,7 +58,7 @@ class App extends Component {
   filterResults(queryString) {
     var app = this;
 
-    axios.get('http://localhost:8080/?' + queryString)
+    axios.get('http://localhost:8080/?search="' + this.state.value + '"&' + queryString)
     .then(function ({data}) {
        app.setState({data})
         console.log('success with filtering!!!!!!!!', data);
