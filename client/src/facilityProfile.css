@@ -1,0 +1,62 @@
+.mainImage {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.imageBorder {
+  border: 2px;
+  border-style: solid;
+  color: #123d99;
+  border-radius: 5px;
+  border-width: 100%;
+}
+
+.title {
+  position: relative;
+  text-align: center;
+}
+
+.description {
+  position: relative;
+  margin: auto;
+  float: left;
+  font-family: 'Oxygen', sans-serif;
+  width: 75%;
+}
+
+.contactInfo {
+  position: relative;
+  margin: auto;
+  float: left;
+  font-family: 'Oxygen', sans-serif;
+  width: 25%;
+}
+
+.reviewContent {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-bottom: 2px solid;
+  border-bottom-color: #123d99;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+}
+
+.reviewName {
+  position: relative;
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.reviewDate {
+  position: relative;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+}
+
+.starRating {
+  position: relative;
+  text-align: center;
+}
