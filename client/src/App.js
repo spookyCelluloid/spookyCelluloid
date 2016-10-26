@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
+import {browserHistory} from 'react-router';
 import $ from 'jquery';
-import SearchLandingPage from './SearchLandingPage'
-import SearchForm from './SearchForm';
-import FilterBar from './FilterBar'
 
 
 class App extends Component {
@@ -12,26 +10,26 @@ class App extends Component {
       data: [],
       value: ''
     } 
-    
   }
 
   handleChange(value) {
-    console.log(value)
     this.setState({value});
   }
 
   queryDatabase(event) {
     event.preventDefault();
     event.target.value = '';
-    console.log("Text field value is: " + this.state.value);
 
     $.ajax({
       url: 'http://localhost:8080/?search="' + this.state.value + '"',
       type: 'GET',
       success: data => {
         $('input[type="text"], textarea').val('');
-        this.setState({data})
+        this.setState({data});
         console.log('success!!!!!!!!', data);
+
+        browserHistory.push('/searchResults');  
+        //Router.transitionTo('SearchLandingPage')
       },
       error: data => {
         console.error('errror with submit get', data);
@@ -54,23 +52,23 @@ class App extends Component {
     });
   }
 
-  renderData() {
-    if (this.state.data.length) {
-      return <SearchLandingPage filterResults={this.filterResults.bind(this)} searchData={this.state.data}/>
-    }
-  }
-
   render() {
     return (
       <div>Nursing Home App
-        <div>
-          <SearchForm queryDatabase={this.queryDatabase.bind(this)} handleChange ={this.handleChange.bind(this)} />
-        </div>
-        {this.renderData()}
-
+         <div>
+           {this.props.children && React.cloneElement(this.props.children, {
+             handleChange: this.handleChange.bind(this),
+             queryDatabase: this.queryDatabase.bind(this),
+             searchData: this.state.data
+           })}
+         </div>
+        
       </div>
     );
   }
 }
 
 export default App;
+
+
+      

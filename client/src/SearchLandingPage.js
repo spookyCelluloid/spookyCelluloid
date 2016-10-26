@@ -26,7 +26,7 @@ class SearchLandingPage extends Component {
           <a href='#'>About Us</a>
           <a href='#'>Contact Us</a>
         </div>
-
+        {this.props.children}
       </div>
     )
   }
