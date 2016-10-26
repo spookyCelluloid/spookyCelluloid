@@ -1,0 +1,28 @@
+.mainImage {
+  border: 2px;
+  border-style: solid;
+  color: #123d99;
+}
+
+.column {
+
+}
+
+.description {
+  float: left;
+  width: 75%;
+}
+
+.contactInfo {
+  float: left;
+  width: 25%;
+}
+
+.reviewContent {
+  border-bottom: 2px solid;
+  border-bottom-color: #123d99;
+}
+
+.reviewName {
+  font-weight: bold;
+}
