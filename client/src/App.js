@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import {browserHistory} from 'react-router';
 import $ from 'jquery';
-import SearchLandingPage from './SearchLandingPage'
-import SearchForm from './SearchForm';
-import FilterBar from './FilterBar'
+import axios from 'axios';
 
 
 class App extends Component {
@@ -12,65 +11,72 @@ class App extends Component {
       data: [],
       value: ''
     } 
-    
   }
 
   handleChange(value) {
-    console.log(value)
     this.setState({value});
   }
 
   queryDatabase(event) {
     event.preventDefault();
     event.target.value = '';
-    console.log("Text field value is: " + this.state.value);
+    var app = this;
 
-    $.ajax({
-      url: 'http://localhost:8080/?search="' + this.state.value + '"',
-      type: 'GET',
-      success: data => {
+    axios.get('http://localhost:8080/?search="' + this.state.value + '"')
+      .then(function (response) {
         $('input[type="text"], textarea').val('');
-        this.setState({data})
-        console.log('success!!!!!!!!', data);
-      },
-      error: data => {
-        console.error('errror with submit get', data);
-      }
-    });
+        app.setState({data: response.data});
+        console.log('success!!!!!!!!', response);
+
+        browserHistory.push('/searchResults');  
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
    
   }
 
-  filterResults(queryString) {
-    $.ajax({
-      url: 'http://localhost:8080/?' + queryString,
-      type: 'GET',
-      success: data => {
-        this.setState({data})
-        console.log('success with filtering!!!!!!!!', data);
-      },
-      error: data => {
-        console.error('errror with submit get', data);
-      }
-    });
-  }
+  onTitleClick() {
+    browserHistory.push('/FacilityProfile');
+  };
 
-  renderData() {
-    if (this.state.data.length) {
-      return <SearchLandingPage filterResults={this.filterResults.bind(this)} searchData={this.state.data}/>
-    }
+  filterResults(queryString) {
+    var app = this;
+
+    axios.get('http://localhost:8080/?' + queryString)
+    .then(function ({data}) {
+       app.setState({data})
+        console.log('success with filtering!!!!!!!!', data);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+    
   }
 
   render() {
     return (
       <div>Nursing Home App
         <div>
-          <SearchForm queryDatabase={this.queryDatabase.bind(this)} handleChange ={this.handleChange.bind(this)} />
+          {this.props.children && React.cloneElement(this.props.children, {
+            handleChange: this.handleChange.bind(this),
+            queryDatabase: this.queryDatabase.bind(this),
+            filterResults: this.filterResults.bind(this),
+            onTitleClick: this.onTitleClick,
+            searchData: this.state.data
+          })}
         </div>
-        {this.renderData()}
-
+        <div className='footer'> 
+          <a href='#'>Home</a>
+          <a href='#'>About Us</a>
+          <a href='#'>Contact Us</a>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+
+      
