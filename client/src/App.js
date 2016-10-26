@@ -9,7 +9,8 @@ class App extends Component {
     super(props)
     this.state = {
       data: [],
-      value: ''
+      value: '',
+      currentProfile: {}
     } 
   }
 
@@ -23,10 +24,10 @@ class App extends Component {
     var app = this;
 
     axios.get('http://localhost:8080/?search="' + this.state.value + '"')
-      .then(function (response) {
+      .then(function ({data}) {
         $('input[type="text"], textarea').val('');
-        app.setState({data: response.data});
-        console.log('success!!!!!!!!', response);
+        app.setState({data});
+        console.log('success!!!!!!!!', data);
 
         browserHistory.push('/searchResults');  
       })
@@ -36,8 +37,23 @@ class App extends Component {
    
   }
 
-  onTitleClick() {
-    browserHistory.push('/FacilityProfile');
+  onTitleClick(facilityID) {
+    console.log(facilityID);
+    var app = this;
+
+    axios.get('http://localhost:8080/facility?id=' + facilityID)
+      .then(({data}) => {
+        console.log(data);
+        this.setState({currentProfile: data});
+        browserHistory.push('/FacilityProfile');
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+  };
+
+  onCompareClick() {
+    console.log('compare clicked');
   };
 
   filterResults(queryString) {
@@ -51,7 +67,7 @@ class App extends Component {
     .catch(function (error) {
       console.log(error);
     });
-    
+
   }
 
   render() {
@@ -62,8 +78,10 @@ class App extends Component {
             handleChange: this.handleChange.bind(this),
             queryDatabase: this.queryDatabase.bind(this),
             filterResults: this.filterResults.bind(this),
-            onTitleClick: this.onTitleClick,
-            searchData: this.state.data
+            onTitleClick: this.onTitleClick.bind(this),
+            onCompareClick: this.onCompareClick,
+            searchData: this.state.data,
+            currentProfile: this.state.currentProfile
           })}
         </div>
         <div className='footer'> 
