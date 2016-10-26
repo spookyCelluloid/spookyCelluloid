@@ -14,7 +14,7 @@ const FacilityProfile = ({currentProfile}) => (
         <img src='http://www.nursinghomes.com/wp-content/tools/TimThumb.php?src=/wp-content/uploads/property-images/055107/055107__4.jpg&w=800&h=800zc=3'/>
       </div>
     </div>
-    <div>
+    <div className='facilityInfo'>
       <p>{console.log(currentProfile)}</p>
       <div className='description'>
         <p><strong>Description: </strong>{currentProfile.description}</p>

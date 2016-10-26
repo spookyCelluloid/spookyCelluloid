@@ -17,6 +17,12 @@
   display: none;
 }
 
+.facilityInfo {
+  position: relative;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .headerStar input {
   display: none;
 }
@@ -28,7 +34,6 @@
 
 .description {
   position: relative;
-  margin: auto;
   float: left;
   font-family: 'Oxygen', sans-serif;
   width: 75%;
@@ -43,6 +48,7 @@
 }
 
 .reviewContent {
+  float: left;
   position: relative;
   margin-left: 10%;
   margin-right: 10%;
@@ -50,6 +56,11 @@
   border-bottom-color: #123d99;
   font-family: 'Oxygen', sans-serif;
   text-align: center;
+}
+
+.reviews {
+  position: relative;
+  float: left;
 }
 
 .reviewName {
