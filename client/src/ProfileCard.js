@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+require('./ProfileCardCss.css');
 
 class ProfileCard extends Component {
   constructor(props) {
@@ -7,9 +8,8 @@ class ProfileCard extends Component {
   }
   render() {
     return (
-      <div className="profileCard">
-        <img/>
-        <p>{this.props.facility.average_rating}</p>
+      <div className="profileCard col-md-8">
+        <img className="profileCardImg" src={this.props.facility.image_url}/>
         <h3 onClick={() => this.props.onTitleClick(this.props.facility.id)}>{this.props.facility.facility_name}</h3>
         <p>{this.props.facility.street} + {this.props.facility.city} + {this.props.facility.zip} + {this.props.facility.state}</p>
         <p>{this.props.facility.phone_number}</p>
@@ -17,6 +17,7 @@ class ProfileCard extends Component {
         <p>{this.props.facility.specialties.map(function(speciality) {
           <p>{speciality}</p>
         })}</p>
+         <p>{this.props.facility.average_rating}</p>
       </div>
     )
   }
