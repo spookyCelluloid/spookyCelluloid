@@ -39,8 +39,9 @@ class Filter extends Component {
   createQueryString() {
     var query = '';
 
-    if (this.state.Specialties.length === 0) {
-      query = 'specialties=';
+    if (this.state.Specialties.length !== 0) {
+      console.log('have ' + this.state.Specialties.length + ' specialties');
+      query = '&specialties=';
 
       this.state.Specialties.forEach( (specialty) => {
         query += '"' + specialty + '"' + ',';
@@ -49,7 +50,8 @@ class Filter extends Component {
       query = query.slice(0, query.length-1);
     }
 
-    if (this.state.Yes.length === 0) {
+    if (this.state.Yes.length !== 0) {
+      console.log('have ' + this.state.Yes.length + ' Yeses');
 
       this.state.Yes.forEach( (yesValue) => {
         query += '&' + yesValue + '="Yes"';
@@ -57,7 +59,8 @@ class Filter extends Component {
 
     }
 
-    if (this.state.Ownership.length === 0) {
+    if (this.state.Ownership.length !== 0) {
+      console.log('have ' + this.state.Ownership.length + ' Ownership');
       query += '&ownership=';
 
       this.state.Ownership.forEach( (whoOwns) => {
@@ -68,10 +71,15 @@ class Filter extends Component {
     }
 
     if (this.state.average_rating > 0) {
+      console.log('have ' + this.state.average_rating + ' rating');
       query += '&average_rating=' + this.state.average_rating;
     }
 
-    console.log(query);
+    query = query.slice(1);
+
+    this.props.filterResults(query);
+
+
 
   }
 
@@ -90,10 +98,7 @@ class Filter extends Component {
       this.setState({average_rating: value});
     } 
 
-
-
-
-    // console.log(this.state);
+    console.log(this.state);
 
     // console.log(filtername, value);
   }
