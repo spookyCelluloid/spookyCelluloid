@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-require('./main.css');
+require('./FilterBar.css');
 
 class Filter extends Component {
   constructor(props){
@@ -13,7 +13,8 @@ class Filter extends Component {
       average_rating: 0,
       average_years_of_experience: 0,
       capacity: 0,
-      filterList: []
+      filterList: [],
+      displayFilterList: []
     };
 
   }
@@ -21,8 +22,10 @@ class Filter extends Component {
   componentDidMount() {
     axios.get('http://localhost:8080/getFilterList')
       .then(({data}) => {
-        console.log(data);
-        this.setState({filterList: data});
+        this.setState({
+          filterList: data, 
+          displayFilterList: data
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -72,8 +75,6 @@ class Filter extends Component {
 
     this.props.filterResults(query);
 
-
-
   }
 
   updateFilter(filtername, value) {
@@ -90,10 +91,12 @@ class Filter extends Component {
     } else if(filtername === 'average_rating') {
       this.setState({average_rating: value});
     } 
+  }
 
-    console.log(this.state);
+  updateList(value) {
+    var display = this.state.filterList.filter((specialty) => specialty.name.toLowerCase().indexOf(value.toLowerCase()) > -1)
 
-    // console.log(filtername, value);
+    this.setState({displayFilterList: display});
   }
 
   render() {
@@ -101,43 +104,48 @@ class Filter extends Component {
     return (
       <div className='sideBar'>
 
-        <div className='YesNo'>
-          <ul>
-            <li><input type="checkbox" value='Medicare' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Accepts Medicare</li>
-            <li><input type="checkbox" value='social_events' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Social Events</li>
-          </ul>
-        </div>
+        <div className='filterBlock'><span className='filterTitle'>Features:</span> <br/>
+          <input type="checkbox" value='Medicare' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Accepts Medicare <br/>
+          <input type="checkbox" value='social_events' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Social Events <br/>
+        </div><hr/>
 
 
-        <div className='ownership' >Ownership
-          <ul>
-            <li><input type="checkbox" value='Government' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Government</li>
-            <li><input type="checkbox" value='For-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> For-Profit</li>
-            <li><input type="checkbox" value='Non-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Non-Profit</li>
-          </ul>
-        </div>
+        <div className='filterBlock' ><span className='filterTitle'>Ownership:</span> <br/>
+          <input type="checkbox" value='Government' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Government <br/>
+          <input type="checkbox" value='For-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> For-Profit <br/>
+          <input type="checkbox" value='Non-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Non-Profit <br/>
+        </div><hr/>
 
 
-        <div className='Specialties' >Specialties
-          <ul>{
-            this.state.filterList.map(({name}) => (
-              <li>
+        <div className='filterBlock' ><span className='filterTitle'>Specialties:</span>
+          <input 
+            type='text' 
+            onChange={(e) => this.updateList(e.target.value)} 
+            placeholder='Search for specialties..'/>
+
+          {
+            this.state.displayFilterList.map((facility) => (
+              <div>
                 <input 
                   type="checkbox" 
-                  value={name} 
-                  onClick={ (e) => this.updateFilter('Specialties', event.target.value) }/>
-                   {name}
-              </li>
-              ))
+                  value={facility.name} 
+                  checked={this.state.Specialties.indexOf(facility.name) > -1}
+                  onChange={ (e) => console.log(e.target.checked) }
+                  onClick={ (e) => {
+                    this.updateFilter('Specialties', e.target.value);
+                  } }
+                  /> {facility.name}
+              </div>
+            ))
           }
-          </ul>
-        </div>
+        </div><hr/>
 
 
-        <div className='slideBar Slider' > Ratings: <span>{this.state.average_rating}</span>
+        <div className='filterBlock' ><span className='filterTitle'> Ratings: </span> <span>{this.state.average_rating}</span>
           <input type='range' defaultValue={0} max={5} step={1} style={{'width': '100px'}} onChange={(event) => this.updateFilter('average_rating', event.target.value)}/>
-        </div>
-        <button onClick={() => this.createQueryString()}> Filter </button>
+        </div><hr/>
+
+        <div className='filterButton' onClick={() => this.createQueryString()}> Filter </div>
       </div>
       )
   }
