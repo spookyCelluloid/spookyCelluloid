@@ -48,6 +48,7 @@ module.exports = {
 
     getFacilityProfile: function(facilityID, callback) {
 
+
       var FacilityProfileQuery = 'SELECT * FROM Business_profile WHERE id = ' + facilityID;
 
       db.query(FacilityProfileQuery, function(err, business){

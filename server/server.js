@@ -32,9 +32,11 @@ app.get('/', function(req, res) {
 
 app.get('/facility', function(req, res) {
   var facilityID = req.query.id;
+  
   model.facility.getFacilityProfile(facilityID, function(err, results) {
     if (err) {
       res.send(err);
+    } else {
       res.json(results);
     }
   })

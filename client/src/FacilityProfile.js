@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
 
-const FacilityProfile = ({searchData}) => (
+const FacilityProfile = ({currentProfile}) => (
 
   <div>This is the FacilityProfile page
-    <div>{searchData[0].facility_name} </div>
+    <div>{currentProfile.facility_name} </div>
   </div>
 );
 

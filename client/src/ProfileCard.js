@@ -9,12 +9,12 @@ class ProfileCard extends Component {
     return (
       <div className="profileCard">
         <img/>
-        <p>{this.props.searchData.average_rating}</p>
-        <h3 onClick={() => this.props.onTitleClick()}>{this.props.searchData.facility_name}</h3>
-        <p>{this.props.searchData.street} + {this.props.searchData.city} + {this.props.searchData.zip} + {this.props.searchData.state}</p>
-        <p>{this.props.searchData.phone_number}</p>
-        <p>{this.props.searchData.num_ratings}</p>
-        <p>{this.props.searchData.specialties.map(function(speciality) {
+        <p>{this.props.facility.average_rating}</p>
+        <h3 onClick={() => this.props.onTitleClick(this.props.facility.id)}>{this.props.facility.facility_name}</h3>
+        <p>{this.props.facility.street} + {this.props.facility.city} + {this.props.facility.zip} + {this.props.facility.state}</p>
+        <p>{this.props.facility.phone_number}</p>
+        <p>{this.props.facility.num_ratings}</p>
+        <p>{this.props.facility.specialties.map(function(speciality) {
           <p>{speciality}</p>
         })}</p>
       </div>

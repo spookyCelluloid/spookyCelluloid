@@ -13,9 +13,10 @@ class SearchLandingPage extends Component {
   render() {
     return (
       <div>
+        <button onClick={() => this.props.onCompareClick()}>Compare</button>
         <div>{
           this.props.searchData.map((nursingHome) => {
-            return (<ProfileCard onTitleClick={this.props.onTitleClick} key={nursingHome.id} searchData={nursingHome}/>)
+            return (<ProfileCard onTitleClick={this.props.onTitleClick} key={nursingHome.id} facility={nursingHome}/>)
           })
         }</div>
 
