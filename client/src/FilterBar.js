@@ -1,11 +1,6 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 require('./main.css');
-
-
-
-
-
-
 
 class Filter extends Component {
   constructor(props){
@@ -17,9 +12,21 @@ class Filter extends Component {
       num_ratings: 0,
       average_rating: 0,
       average_years_of_experience: 0,
-      capacity: 0
+      capacity: 0,
+      filterList: []
     };
 
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:8080/getFilterList')
+      .then(({data}) => {
+        console.log(data);
+        this.setState({filterList: data});
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }
 
   createQueryString() {
@@ -112,21 +119,17 @@ class Filter extends Component {
 
 
         <div className='Specialties' >Specialties
-          <ul>
-            <li><input type="checkbox" value='Fractured Hips' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Fractured Hips</li>
-            <li><input type="checkbox" value='Strokes' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Strokes</li>
-            <li><input type="checkbox" value='Colostomy Care' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Colostomy Care</li>
-            <li><input type="checkbox" value='Catheter Care' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Catheter Care</li>
-            <li><input type="checkbox" value='IV Therapy' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> IV Therapy</li>
-            <li><input type="checkbox" value='Dressings and Care for Pressure Ulcers' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Dressings and Care for Pressure Ulcers</li>
-            <li><input type="checkbox" value='Tube Feedings' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Tube Feedings</li>
-            <li><input type="checkbox" value='Oxygen and Respiratory Therapy' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Oxygen and Respiratory Therapy</li>
-            <li><input type="checkbox" value='Care During Final Stages of Illness Such as Cancer' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Care During Final Stages of Illness Such as Cancer</li>
-            <li><input type="checkbox" value='Care for Surgical Wounds' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Care for Surgical Wounds</li>
-            <li><input type="checkbox" value='Dementia Care' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Dementia Care</li>
-            <li><input type="checkbox" value='Illiostomy' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Illiostomy</li>
-            <li><input type="checkbox" value='Diabetic Care' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Diabetic Care</li>
-            <li><input type="checkbox" value='Respite stays' onClick={ (event) => this.updateFilter('Specialties', event.target.value) }/> Respite stays</li>
+          <ul>{
+            this.state.filterList.map(({name}) => (
+              <li>
+                <input 
+                  type="checkbox" 
+                  value={name} 
+                  onClick={ (e) => this.updateFilter('Specialties', event.target.value) }/>
+                   {name}
+              </li>
+              ))
+          }
           </ul>
         </div>
 

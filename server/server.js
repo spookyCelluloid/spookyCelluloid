@@ -42,10 +42,9 @@ app.get('/facility', function(req, res) {
   })
 });
 
-app.get('/query', function(req, res) {
-  var queryString = req.query;
+app.get('/getFilterList', function(req, res) {
 
-  model.facility.getFilteredList(queryString, function(err, results) {
+  model.filter.getFilterList(function(err, results) {
     if (err) {
       res.send(err);
     } else {
