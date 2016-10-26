@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import StarRating from 'react-star-rating';
 require('./ProfileCardCss.css');
 
 class ProfileCard extends Component {
@@ -8,19 +9,31 @@ class ProfileCard extends Component {
   }
   render() {
     return (
-      <div className="profileCard col-md-8">
-        <img className="profileCardImg" src={this.props.facility.image_url}/>
-        <h3 onClick={() => this.props.onTitleClick(this.props.facility.id)}>{this.props.facility.facility_name}</h3>
-        <p>{this.props.facility.street} + {this.props.facility.city} + {this.props.facility.zip} + {this.props.facility.state}</p>
-        <p>{this.props.facility.phone_number}</p>
-        <p>{this.props.facility.num_ratings}</p>
-        <p>{this.props.facility.specialties.map(function(speciality) {
-          <p>{speciality}</p>
-        })}</p>
-         <p>{this.props.facility.average_rating}</p>
+      <div className='profileCard col-md-9'>
+        <div className='image col-md-3'>
+          <img className='profileCardImg' src={this.props.facility.image_url}/>
+        </div>
+        
+        <div className='info col-md-9'>
+          <h3 className='profileCardName' onClick={() => this.props.onTitleClick(this.props.facility.id)}>{this.props.facility.facility_name}</h3>
+          <p>{this.props.facility.street} {this.props.facility.city} , {this.props.facility.state} {this.props.facility.zip}</p>
+          <p>{this.props.facility.phone_number}</p>
+        </div>
+
+        <div className='profileCardSpecialties'>
+          {this.props.facility.specialties.map((specialty) => (<span>{specialty}</span> ))}
+        </div>
+
+        <div className='starRating'>
+            <StarRating name='starRating' rating={this.props.facility.average_rating}/>
+        </div>
       </div>
-    )
+      
+     
+      
+      )
   }
 }
 
 export default ProfileCard 
+
