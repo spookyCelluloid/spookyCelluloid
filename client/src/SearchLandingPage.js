@@ -15,17 +15,12 @@ class SearchLandingPage extends Component {
       <div>
         <div>{
           this.props.searchData.map((nursingHome) => {
-            return (<ProfileCard key={nursingHome.id} searchData={nursingHome}/>)
+            return (<ProfileCard onTitleClick={this.props.onTitleClick} key={nursingHome.id} searchData={nursingHome}/>)
           })
         }</div>
 
         <FilterBar filterResults={this.props.filterResults} />
 
-        <div className='footer'> 
-          <a href='#'>Home</a>
-          <a href='#'>About Us</a>
-          <a href='#'>Contact Us</a>
-        </div>
         {this.props.children}
       </div>
     )
