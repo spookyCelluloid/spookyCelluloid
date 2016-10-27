@@ -18,7 +18,7 @@
 }
 
 .submit {
-  background-image: url('../images/Magnifying_glass.png');
+  /*background-image: url('../images/Magnifying_glass.png');*/
   background-size: cover;
   padding: 0px;
   margin-bottom:0px;
@@ -36,6 +36,7 @@
 .search .submit {
   border-radius: 25px;
   background-color: rgba(255, 255, 255, 0.5);
+  display: none;
 }
 
 .search ::-webkit-input-placeholder {

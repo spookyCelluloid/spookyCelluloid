@@ -15,7 +15,7 @@
 }
 
 .heading-lg {
-    font-size: 70px;
+    font-size: 100px;
     letter-spacing: 8px;
     font-weight: bold;
     font-family: 'Oxygen', sans-serif;
@@ -23,14 +23,13 @@
     color: white;
 }
 
-
-
 .heading-sub {
     margin-top: 5px;
     margin-bottom: 10px;
-    font-size: 30px;
+    font-size: 45px;
     font-weight: 100;
-    color: #27AE60;
+    color: white;
+    /*color: #DC7633;*/
 }
 
 .Quotes {

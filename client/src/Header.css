@@ -9,7 +9,6 @@
 }
 
 div.inline {
-  /*display: inline;*/
   float: right;
   margin-right: 18%;
 }
@@ -19,7 +18,7 @@ div.inline {
 }
 
 .icon {
-  margin-left: 5%;
+  margin-left: 1%;
   width: 30px;
   height: 30px;
   background: url('../images/home.png');
@@ -41,16 +40,18 @@ div.inline {
   margin: 0;
   padding: 0;
   height: 30px;
-  width: 95%;
+  width: 85%;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
 
 .headerSearchForm button {
+  font-size: 20px;
+  font-weight: 50;
   margin: 0;
   padding: 0;
   height: 30px;
-  width: 5%;
+  width: 15%;
   background-color: #EFF2F3;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
