@@ -1,10 +1,11 @@
 .profileCard {
   border: 1px solid grey;
-  height: 250px;
+  height: 280px;
   margin-left: 30px;
   margin-bottom: 30px;
   color: #717273;
   border-radius: 3px;
+  font-size: 18px
 }
 
 .profileCard:hover {
@@ -19,7 +20,8 @@
 }
 
 .num_ratings {
-  font-size: 14px;
+  font-size: 15px;
+  vertical-align: top;
 }
 
 .image {
@@ -39,7 +41,8 @@
 
 .info {
   margin-top: 2px;
-  line-height: 12px;
+  line-height: 19px;
+  padding-right: 20px
 }
 
 .profileCardImg {
@@ -51,16 +54,11 @@
 
 .profileCardName {
   font-weight: bold;
-  color: #123d99;
+  color: #DC7633;
 }
 
 .starRating input {
   display: none;
-}
-
-.info {
-  /*height: 200px;*/
-  padding-right: 10px
 }
 
 .profileCardSpecialties span {

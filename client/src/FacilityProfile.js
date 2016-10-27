@@ -7,7 +7,6 @@ const FacilityProfile = ({currentProfile}) => (
   <div className='profileCard'>
     <div className='title'>
         <h2 className='facilityName'>{currentProfile.facility_name}</h2>
-        <h2 className='headerStar'><StarRating name='mainRating' rating={currentProfile.averageRating}/></h2>
     </div>
     <div className='mainImage'>
       <div className='imageBorder'>
@@ -33,9 +32,7 @@ const FacilityProfile = ({currentProfile}) => (
         return (
           <div>
             <p className='reviewName'>{review.first_name} {review.last_name}</p>
-            <div className='starRating'>
-              <StarRating name='starRating' rating={review.rating}/>
-            </div>
+
             <p className='reviewDate'>Date {review.date}</p>
             <p className='reviewContent'><strong>Review: </strong>{review.content}</p>
           </div>
