@@ -27,7 +27,7 @@ const FacilityProfile = ({currentProfile}) => (
         <p className='state'>{currentProfile.state}</p>
         <p className='zip'>{currentProfile.zip}</p>
       </div>
-    </div> 
+    </div>
     <div className='reviews'>
       {currentProfile.reviews.map((review) => {
         return (
