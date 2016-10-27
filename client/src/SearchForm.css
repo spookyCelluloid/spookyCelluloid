@@ -1,0 +1,31 @@
+.inputBox {
+  margin-top: 0px;
+  width: 500px;
+  height: 50px;
+  background-color:transparent;
+  border: 0px;
+  border: 1px solid black;
+  margin-right: 10px;
+  font-size: 35px;
+  color: white;
+}
+
+
+input[type="text"]::-webkit-input-placeholder {
+  color: black;
+  text-align: center;
+  font-weight: 100;
+  font-family: 'Oxygen', sans-serif;
+}
+
+.submit {
+  margin-top:0px;
+  width: 100px;
+  height: 50px;
+  background-color:transparent;
+  border:0px;
+  border: 1px solid black;
+  margin-left: 10px;
+  font-size: 25px;
+  color: black;
+}
