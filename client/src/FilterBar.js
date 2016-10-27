@@ -178,7 +178,7 @@ class Filter extends Component {
           <input
             type='text'
             onChange={(e) => this.updateList(e.target.value)}
-            placeholder='Search for specialties..'/>
+            placeholder='Search specialties..'/>
 
           {
             this.state.displayFilterList.map((facility) => (
@@ -214,12 +214,6 @@ class Filter extends Component {
             </div>
           </star-rating>
         </div><br/>
-
-
-
-
-
-
 
         <div className='filterButton' onClick={() => this.createQueryString()}> Filter </div>
       </div>
