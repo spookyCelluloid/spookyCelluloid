@@ -4,12 +4,13 @@ import App from './App';
 import SearchLandingPage from './SearchLandingPage';
 import SearchForm from './SearchForm';
 import FacilityProfile from './FacilityProfile';
+import Home from './Home';
 
 
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={SearchForm} />
+      <IndexRoute component={Home} />
       <Route path='searchResults' component={SearchLandingPage} />
       <Route path='FacilityProfile' component={FacilityProfile} />
     </Route>
