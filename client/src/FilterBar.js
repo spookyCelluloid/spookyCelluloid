@@ -109,7 +109,7 @@ class Filter extends Component {
   render() {
 
     return (
-      <div className='sideBar col-md-3'>
+      <div className='sideBar col-md-2'>
 
         <div className='filterBlock'><span className='filterTitle'>Features:</span> <br/>
           <input type="checkbox" value='Medicare' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Accepts Medicare <br/>
