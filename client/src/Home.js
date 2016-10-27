@@ -17,44 +17,27 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <div>
-          
-          <SearchForm queryDatabase={this.props.queryDatabase} handleChange={this.props.handleChange} />
-        </div>
-        <div>
-          <img className="homePageImage" src="https://aos.iacpublishinglabs.com/question/aq/700px-394px/medicare-pay-nursing-home-care_dc035c9e73e7006e.jpg?domain=cx.aos.ask.com"></img>
-        </div>
-        <div className='featuredCareFacilities'>
-          <div className='facility1'>
-            <h4>San Francisco Towers</h4>
-          </div>
-          <div className='facility2'>
-            <h4>Linda Mar Care Center</h4>
-          </div>
-          <div className='facility3'>
-            <h4>Bancroft Convalescent Hospital</h4>
+        <div className='main'>
+          <div className='content-wrap'>
+            <div className='content'>
+              <h1 className='heading-lg'> One Up Eldercare </h1>
+              <h2 className='heading-sub'> Where do you want to retire? </h2>
+              <div className='search'>
+                <SearchForm queryDatabase={this.props.queryDatabase} handleChange={this.props.handleChange} />
+              </div>
+            </div>
           </div>
         </div>
-        <div className='featuredQuotes'>
-          <div className='quote1'>
-            <p></p>
-          </div>
-          <div className='quote2'>
-            <p></p>
-          </div>
-          <div className='quote3'>
-            <p></p>
-          </div>
-        </div>
-
-        
-
       </div>
+          
+         
     )
   }
 }
 
 export default Home;
+
+
 
 
 

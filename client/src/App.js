@@ -84,9 +84,6 @@ class App extends Component {
   render() {
     return (
       <div className="Site">
-        <div className='header'>
-          <h1 className="title">One Up Elder Care</h1>
-        </div>
         <div className="Site-content">
           {this.props.children && React.cloneElement(this.props.children, {
             handleChange: this.handleChange.bind(this),
@@ -98,11 +95,11 @@ class App extends Component {
             currentProfile: this.state.currentProfile
           })}
         </div>
-        <footer className='footer'> 
+        <div className='footer'> 
           <a href='#'>Home</a>
           <a href='#'>About Us</a>
           <a href='#'>Contact Us</a>
-        </footer>
+        </div>
       </div>
     );
   }
