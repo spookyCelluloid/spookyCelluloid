@@ -3,6 +3,7 @@ import {IndexRoute, Router, Route, browserHistory} from 'react-router';
 import App from './App';
 import SearchLandingPage from './SearchLandingPage';
 import FacilityProfile from './FacilityProfile';
+import Profile from './Profile'
 import Home from './Home';
 
 
