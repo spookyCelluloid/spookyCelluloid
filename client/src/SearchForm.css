@@ -1,31 +1,58 @@
 .inputBox {
-  margin-top: 0px;
+  vertical-align: bottom;
+  margin-top: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
   width: 500px;
   height: 50px;
   background-color:transparent;
   border: 0px;
   border: 1px solid black;
-  margin-right: 10px;
   font-size: 35px;
-  color: white;
-}
-
-
-input[type="text"]::-webkit-input-placeholder {
-  color: black;
-  text-align: center;
   font-weight: 100;
   font-family: 'Oxygen', sans-serif;
+
+ 
 }
 
+
 .submit {
-  margin-top:0px;
+  padding: 0px;
+  margin-bottom:0px;
   width: 100px;
   height: 50px;
   background-color:transparent;
   border:0px;
   border: 1px solid black;
-  margin-left: 10px;
+  margin-left: 5px;
   font-size: 25px;
   color: black;
+}
+
+::-webkit-input-placeholder {
+   color: black;
+   font-weight: 50;
+   font-size: 20px;
+   font-style: italic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: black; 
+   font-weight: 50;
+   font-size: 20px; 
+   font-style: italic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: black; 
+   font-weight: 50; 
+   font-size: 20px;
+   font-style: italic;
+}
+
+:-ms-input-placeholder {  
+   color: black;  
+   font-weight: 50;
+   font-size: 20px;
+   font-style: italic;
 }
