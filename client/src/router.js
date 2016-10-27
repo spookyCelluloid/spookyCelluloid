@@ -12,7 +12,7 @@ const routes = (
     <Route path='/' component={App}>
       <IndexRoute component={Home} />
       <Route path='searchResults' component={SearchLandingPage} />
-      <Route path='FacilityProfile' component={FacilityProfile} />
+      <Route path='FacilityProfile' component={Profile} />
     </Route>
   </Router>
 );
