@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import SearchForm from './SearchForm';
+require('./Header.css');
 
 class Header extends Component {
   constructor(props) {
     super(props)
-    console.log(props);
     this.handleResponse = this.handleResponse.bind(this);
   }
 
@@ -15,38 +15,16 @@ class Header extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h1>Nursing Home App</h1>
-          <SearchForm handleResponse={this.handleResponse}/>
-        </div>
-        <div className='featuredCareFacilities'>
-          <div className='facility1'>
+      <div className='header'>
+        <span className='appName'>One Up Elderly</span>
 
-          </div>
-          <div className='facility2'>
+        <img
+          className='icon'
+          onClick={() => this.props.redirect('')} />
 
-          </div>
-          <div className='facility3'>
-
-          </div>
-        </div>
-        <div className='featuredQuotes'>
-          <div className='quote1'>
-
-          </div>
-          <div className='quote2'>
-
-          </div>
-          <div className='quote3'>
-
-          </div>
-        </div>
-
-        <div className='footer'> 
-          <a href='#'>Home</a>
-          <a href='#'>About Us</a>
-          <a href='#'>Contact Us</a>
+        <div
+          className='headerSearchForm inline'>
+          <SearchForm queryDatabase={this.props.queryDatabase} handleChange={this.props.handleChange} />
         </div>
 
       </div>
@@ -57,6 +35,8 @@ class Header extends Component {
 export default Header;
 
 
+// <input type="text" onChange={(e) => this.props.handleChange(e.target.value)} />
+// <button type="submit" onClick={(e) => this.props.queryDatabase(e)}>s</button>
 
 
 

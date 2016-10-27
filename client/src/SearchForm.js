@@ -12,13 +12,13 @@ class SearchForm extends Component {
 
   render() {
     return (
-        <form onSubmit={(e) => this.props.queryDatabase(e)}>
+        <form className='searchForm' onSubmit={(e) => this.props.queryDatabase(e)}>
           <input className='inputBox' type="text" onChange={(e) => this.props.handleChange(e.target.value)} />
-          <button className='submit' type="submit">Submit</button>
+          <button className='submit' type="submit"></button>
         </form>
     );
   }
-}; 
+};
 
 export default SearchForm;
 
