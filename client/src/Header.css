@@ -1,0 +1,55 @@
+.header {
+  height: 40px;
+  width: 100%;
+  background-color: #123D99;
+  color: white;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+div.inline {
+  /*display: inline;*/
+  float: right;
+  margin-right: 18%;
+}
+
+.appName {
+  margin-left: 5%;
+}
+
+.icon {
+  margin-left: 5%;
+  width: 30px;
+  height: 30px;
+  background: url('../images/home.png');
+  background-size: cover;
+}
+
+.headerSearchForm {
+  margin: 0;
+  padding: 0;
+  width: 50%;
+  height: 30px;
+  border-radius: 15px;
+  color: black;
+  font-size: 20px;
+}
+
+.headerSearchForm input {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: 95%;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.headerSearchForm button {
+  margin: 0;
+  padding: 0;
+  height: 30px;
+  width: 5%;
+  background-color: #EFF2F3;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}

@@ -1,32 +1,35 @@
 .inputBox {
+  border: 1px solid black;
+  font-family: 'Oxygen', sans-serif;
   vertical-align: bottom;
+}
+
+.search .inputBox {
+  font-size: 35px;
+  font-weight: 100;
+  background-color:transparent;
   margin-top: 25px;
   margin-left: 10px;
   margin-right: 10px;
   width: 500px;
   height: 50px;
-  background-color:transparent;
-  border: 0px;
-  border: 1px solid black;
-  font-size: 35px;
-  font-weight: 100;
-  font-family: 'Oxygen', sans-serif;
-
- 
 }
 
 
 .submit {
+  background-image: url('../images/Magnifying_glass.png');
+  background-size: cover;
   padding: 0px;
   margin-bottom:0px;
-  width: 100px;
+  width: 50px;
   height: 50px;
   background-color:transparent;
-  border:0px;
   border: 1px solid black;
   margin-left: 5px;
   font-size: 25px;
   color: black;
+  vertical-align: bottom;
+
 }
 
 ::-webkit-input-placeholder {
@@ -37,21 +40,21 @@
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: black; 
+   color: black;
    font-weight: 50;
-   font-size: 20px; 
-   font-style: italic;
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: black; 
-   font-weight: 50; 
    font-size: 20px;
    font-style: italic;
 }
 
-:-ms-input-placeholder {  
-   color: black;  
+::-moz-placeholder {  /* Firefox 19+ */
+   color: black;
+   font-weight: 50;
+   font-size: 20px;
+   font-style: italic;
+}
+
+:-ms-input-placeholder {
+   color: black;
    font-weight: 50;
    font-size: 20px;
    font-style: italic;
