@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Header from'./Header'
 import {browserHistory} from 'react-router';
 import $ from 'jquery';
 import axios from 'axios';
@@ -77,6 +78,11 @@ class App extends Component {
 
   }
 
+  redirect(pageTo) {
+
+    browserHistory.push('/' + pageTo);
+  }
+
   render() {
     return (
       <div className="Site">
@@ -88,7 +94,8 @@ class App extends Component {
             onTitleClick: this.onTitleClick.bind(this),
             onCompareClick: this.onCompareClick,
             searchData: this.state.data,
-            currentProfile: this.state.currentProfile
+            currentProfile: this.state.currentProfile,
+            redirect: this.redirect
           })}
         </div>
       </div>
