@@ -59,7 +59,7 @@ class Filter extends Component {
     }
 
     if (this.state.Ownership.length !== 0) {
-      console.log('have ' + this.state.Ownership.length + ' Ownership');
+      console.log(this.state.Ownership);
       query += '&ownership=';
 
       this.state.Ownership.forEach( (whoOwns) => {
@@ -112,15 +112,65 @@ class Filter extends Component {
       <div className='sideBar col-md-2'>
 
         <div className='filterBlock'><span className='filterTitle'>Features:</span> <br/>
-          <input type="checkbox" value='Medicare' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Accepts Medicare <br/>
-          <input type="checkbox" value='social_events' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Social Events <br/>
+          <div
+            className='filterItem'
+            onClick={ (event) => {
+              this.setState({checkbox: !this.state.checkbox});
+              this.updateFilter('Yes', 'Medicare')
+            }}>
+            <input
+              type="checkbox"
+              checked={this.state.Yes.indexOf('Medicare') > -1}
+              /> Accepts Medicare
+          </div>
+          <div
+            className='filterItem'
+            onClick={ (event) => {
+              this.setState({checkbox: !this.state.checkbox});
+              this.updateFilter('Yes', 'social_events')
+            }}>
+            <input
+              type="checkbox"
+              checked={this.state.Yes.indexOf('social_events') > -1}
+              /> Social Events
+          </div>
         </div><br/>
 
 
         <div className='filterBlock' ><span className='filterTitle'>Ownership:</span> <br/>
-          <input type="checkbox" value='Government' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Government <br/>
-          <input type="checkbox" value='For-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> For-Profit <br/>
-          <input type="checkbox" value='Non-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Non-Profit <br/>
+          <div
+            className='filterItem'
+            onClick={ (event) => {
+              this.setState({checkbox: !this.state.checkbox});
+              this.updateFilter('Ownership', 'Government')
+            }}>
+            <input
+              type="checkbox"
+              checked={this.state.Ownership.indexOf('Government') > -1}
+              /> Government
+          </div>
+          <div
+            className='filterItem'
+            onClick={ (event) => {
+              this.setState({checkbox: !this.state.checkbox});
+              this.updateFilter('Ownership', 'For-Profit')
+            }}>
+            <input
+              type="checkbox"
+              checked={this.state.Ownership.indexOf('For-Profit') > -1}
+              /> For-Profit
+          </div>
+          <div
+            className='filterItem'
+            onClick={ (event) => {
+              this.setState({checkbox: !this.state.checkbox});
+              this.updateFilter('Ownership', 'Non-Profit')
+            }}>
+            <input
+              type="checkbox"
+              checked={this.state.Ownership.indexOf('Non-Profit') > -1}
+              /> Non-Profit
+          </div>
         </div><br/>
 
 
@@ -132,15 +182,16 @@ class Filter extends Component {
 
           {
             this.state.displayFilterList.map((facility) => (
-              <div key={facility.name}>
+              <div
+                key={facility.name}
+                className='filterItem'
+                onClick={ () => {
+                  this.setState({checkbox: !this.state.checkbox});
+                  this.updateFilter('Specialties', facility.name);
+                } }>
                 <input
                   type="checkbox"
-                  value={facility.name}
                   checked={this.state.Specialties.indexOf(facility.name) > -1}
-                  onChange={ (e) => {
-                    this.setState({checkbox: !this.state.checkbox});
-                    this.updateFilter('Specialties', e.target.value);
-                  } }
                   /> {facility.name}
               </div>
             ))
