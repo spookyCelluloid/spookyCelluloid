@@ -14,8 +14,11 @@
 .filterButton {
   text-align: center;
   width: 100%;
+  height: 30px;
   background-color: #123D99;
   color: white;
+  font-size: 21px;
+  font-weight: bold;
 }
 
 .filterButton:hover {
@@ -25,4 +28,25 @@
 
 .filterSlider {
   width: 200px;
+}
+
+#starRating {
+  padding-top: 3px;
+  display: inline-block;
+}
+
+.star {
+  display: inline-block;
+  width: 18px;
+  height: 17px;
+  margin-right: 15px;
+  background: url('../images/rating.png') no-repeat 0 -17px;
+}
+
+.star:hover {
+  background-position:0 0;
+}
+
+.star.check {
+  background-position:0 0;
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import StarRating from 'react-star-rating';
+require('star-rating');
 require('./FilterBar.css');
 
 class Filter extends Component {
@@ -16,7 +16,8 @@ class Filter extends Component {
       capacity: 0,
       filterList: [],
       displayFilterList: [],
-      checkbox: true
+      checkbox: true,
+      star: [1, 2, 3, 4, 5]
     };
 
   }
@@ -25,7 +26,7 @@ class Filter extends Component {
     axios.get('http://localhost:8080/getFilterList')
       .then(({data}) => {
         this.setState({
-          filterList: data, 
+          filterList: data,
           displayFilterList: data
         });
       })
@@ -92,13 +93,17 @@ class Filter extends Component {
       }
     } else if(filtername === 'average_rating') {
       this.setState({average_rating: value});
-    } 
+    }
   }
 
   updateList(value) {
     var display = this.state.filterList.filter((specialty) => specialty.name.toLowerCase().indexOf(value.toLowerCase()) > -1)
 
     this.setState({displayFilterList: display});
+  }
+
+  clickStar(num) {
+    console.log(num);
   }
 
   render() {
@@ -120,17 +125,17 @@ class Filter extends Component {
 
 
         <div className='filterBlock' ><span className='filterTitle'>Specialties:</span><br/>
-          <input 
-            type='text' 
-            onChange={(e) => this.updateList(e.target.value)} 
+          <input
+            type='text'
+            onChange={(e) => this.updateList(e.target.value)}
             placeholder='Search for specialties..'/>
 
           {
             this.state.displayFilterList.map((facility) => (
               <div key={facility.name}>
-                <input 
-                  type="checkbox" 
-                  value={facility.name} 
+                <input
+                  type="checkbox"
+                  value={facility.name}
                   checked={this.state.Specialties.indexOf(facility.name) > -1}
                   onChange={ (e) => {
                     this.setState({checkbox: !this.state.checkbox});
@@ -143,17 +148,26 @@ class Filter extends Component {
         </div><hr/>
 
 
-        <div className='filterBlock' ><span className='filterTitle'> Ratings: </span> <span>{this.state.average_rating} stars</span>
-          <input 
-            className='filterSlider'
-            type='range' 
-            defaultValue={0} 
-            max={5} 
-            step={1} 
-            onChange={(event) => 
-              this.updateFilter('average_rating', event.target.value)
-            }/>
+        <div className='filterBlock' ><span className='filterTitle'> Ratings: </span> <span>{this.state.average_rating} stars</span><br/>
+          <star-rating>
+            <div id='starRating'>
+              {
+                this.state.star.map((s) =>
+                  <a
+                    className={s <= Number(this.state.average_rating) ? "star check" : "star"}
+                    onClick={() => this.updateFilter('average_rating', ''+s)}>
+                  </a>
+                  )
+              }
+            </div>
+          </star-rating>
         </div><hr/>
+
+
+
+
+
+
 
         <div className='filterButton' onClick={() => this.createQueryString()}> Filter </div>
       </div>
@@ -163,3 +177,13 @@ class Filter extends Component {
 }
 
 export default Filter;
+
+// <input
+  // className='filterSlider'
+  // type='range'
+  // defaultValue={0}
+  // max={5}
+  // step={1}
+  // onChange={(event) =>
+  //   this.updateFilter('average_rating', event.target.value)
+  // }/>
