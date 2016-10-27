@@ -10,6 +10,11 @@ body {
   color: #717273;
 }
 
+.filterItem:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .filterTitle {
   color: #27AE60;
   font-weight: bold;
