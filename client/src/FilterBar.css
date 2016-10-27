@@ -28,7 +28,8 @@ body {
 
 .filterButton:hover {
   cursor: pointer;
-  background-color: #3760b7;
+  background-color: #67D394;
+  /*background-color: #3760b7;*/
 }
 
 .filterSlider {
