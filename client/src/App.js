@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {browserHistory} from 'react-router';
 import $ from 'jquery';
 import axios from 'axios';
+require('./main.css')
 
 
 class App extends Component {
@@ -82,9 +83,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-      <h1 className="title">One Up Elder Care</h1>
-        <div>
+      <div className="Site">
+        <div className='header'>
+          <h1 className="title">One Up Elder Care</h1>
+        </div>
+        <div className="Site-content">
           {this.props.children && React.cloneElement(this.props.children, {
             handleChange: this.handleChange.bind(this),
             queryDatabase: this.queryDatabase.bind(this),
@@ -95,11 +98,11 @@ class App extends Component {
             currentProfile: this.state.currentProfile
           })}
         </div>
-        <div className='footer'> 
+        <footer className='footer'> 
           <a href='#'>Home</a>
           <a href='#'>About Us</a>
           <a href='#'>Contact Us</a>
-        </div>
+        </footer>
       </div>
     );
   }
