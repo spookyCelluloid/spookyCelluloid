@@ -91,11 +91,6 @@ class App extends Component {
             currentProfile: this.state.currentProfile
           })}
         </div>
-        <div className='footer'>
-          <a href='#'>Home</a>
-          <a href='#'>About Us</a>
-          <a href='#'>Contact Us</a>
-        </div>
       </div>
     );
   }

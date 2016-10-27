@@ -2,7 +2,6 @@ import React from 'react';
 import {IndexRoute, Router, Route, browserHistory} from 'react-router';
 import App from './App';
 import SearchLandingPage from './SearchLandingPage';
-import SearchForm from './SearchForm';
 import FacilityProfile from './FacilityProfile';
 import Home from './Home';
 
