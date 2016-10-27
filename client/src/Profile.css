@@ -1,0 +1,42 @@
+.mainpicContainer {
+  margin-left:15%;
+  margin-bottom: 30px;
+}
+.mainpic {
+  width:500px; 
+  height:auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.information {
+  height: 300px;
+  overflow:scroll;
+  border:0px;
+  border-left: 1px solid black;
+}
+
+.reviews {
+ 
+  float: left;
+}
+
+.reviewName {
+  
+  font-family: 'Oxygen', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.reviewDate {
+  position: relative;
+  font-family: 'Oxygen', sans-serif;
+  text-align: center;
+}
+
+.scrollList {
+  text-align: right;
+  border: 0px;
+
+}

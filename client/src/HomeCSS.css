@@ -57,6 +57,11 @@
 
 }
 
+a img {
+    height: 500px;
+    width: 900px;
+}
+
 blockquote {
   width:200px;
   text-align:left;

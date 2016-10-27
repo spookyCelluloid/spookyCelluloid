@@ -46,9 +46,9 @@ class Home extends Component {
           
         <div className="Featured col-md-8" >
           <Carousel className='picSlider'>
-                  <img role="presentation" onClick={()=>{this.goFeatured()}} src="http://www.californiaelderabuselawyer-blog.com/wp-content/uploads/sites/132/2015/11/Nursing-home-building.jpg"/>
-                  <img role="presentation" onClick={()=>{this.goFeatured()}} src="http://adesteinhomecare.com/colorado-senior-care/wp-content/uploads/2015/04/Why-In-Home-Care-Is-A-Better-Option-For-Your-Mom-And-Dad-Than-A-Retirement-Home-.jpg"/>
-                  <img role="presentation" onClick={()=>{this.goFeatured()}} src="https://mustbethistalltoride.files.wordpress.com/2015/06/retirement-home.jpg"/>
+                  <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="http://www.californiaelderabuselawyer-blog.com/wp-content/uploads/sites/132/2015/11/Nursing-home-building.jpg"/> </a>
+                  <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="http://adesteinhomecare.com/colorado-senior-care/wp-content/uploads/2015/04/Why-In-Home-Care-Is-A-Better-Option-For-Your-Mom-And-Dad-Than-A-Retirement-Home-.jpg"/></a>
+                  <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="https://mustbethistalltoride.files.wordpress.com/2015/06/retirement-home.jpg"/></a>
           </Carousel>
         </div>
 
