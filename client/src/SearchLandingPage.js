@@ -24,6 +24,8 @@ class SearchLandingPage extends Component {
         }</div>
 
         {this.props.children}
+
+        
       </div>
     )
   }
