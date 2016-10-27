@@ -1,0 +1,29 @@
+.title {
+  font-size: 80px;
+  font-family: Oxygen;
+  text-align: center;
+}
+
+.featuredCareFacilities {
+  font-family: Oxygen;
+  border: 3px solid #123D99;
+  text-align: center;
+  margin: 15px;
+}
+
+.featuredQuotes {
+  font-family: Oxygen;
+  border: 3px solid #123D99;
+  text-align: center;
+  margin: 15px;
+}
+
+.footer {
+  font-size: 30px;
+  font-family: Oxygen;
+  text-align: center;
+}
+
+.footer > a {
+  margin: 5px;
+}
