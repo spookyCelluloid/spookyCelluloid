@@ -114,14 +114,14 @@ class Filter extends Component {
         <div className='filterBlock'><span className='filterTitle'>Features:</span> <br/>
           <input type="checkbox" value='Medicare' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Accepts Medicare <br/>
           <input type="checkbox" value='social_events' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Social Events <br/>
-        </div><hr/>
+        </div><br/>
 
 
         <div className='filterBlock' ><span className='filterTitle'>Ownership:</span> <br/>
           <input type="checkbox" value='Government' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Government <br/>
           <input type="checkbox" value='For-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> For-Profit <br/>
           <input type="checkbox" value='Non-profit' onClick={ (event) => this.updateFilter('Ownership', event.target.value) }/> Non-Profit <br/>
-        </div><hr/>
+        </div><br/>
 
 
         <div className='filterBlock' ><span className='filterTitle'>Specialties:</span><br/>
@@ -145,7 +145,7 @@ class Filter extends Component {
               </div>
             ))
           }
-        </div><hr/>
+        </div><br/>
 
 
         <div className='filterBlock' ><span className='filterTitle'> Ratings: </span> <span>{this.state.average_rating} stars</span><br/>
@@ -161,7 +161,7 @@ class Filter extends Component {
               }
             </div>
           </star-rating>
-        </div><hr/>
+        </div><br/>
 
 
 
