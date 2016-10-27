@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import StarRating from 'react-star-rating';
 require('./facilityProfile.css');
 
@@ -11,7 +11,7 @@ const FacilityProfile = ({currentProfile}) => (
     </div>
     <div className='mainImage'>
       <div className='imageBorder'>
-        <img src='http://www.nursinghomes.com/wp-content/tools/TimThumb.php?src=/wp-content/uploads/property-images/055107/055107__4.jpg&w=800&h=800zc=3'/>
+        <img role="presentation" src='http://www.nursinghomes.com/wp-content/tools/TimThumb.php?src=/wp-content/uploads/property-images/055107/055107__4.jpg&w=800&h=800zc=3'/>
       </div>
     </div>
     <div className='facilityInfo'>

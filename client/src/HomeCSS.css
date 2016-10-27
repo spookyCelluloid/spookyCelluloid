@@ -29,12 +29,21 @@
   margin-top: 30px;
   float:left;
 }
-.wrapper {
-  float:left;
-}
+
 
 .Featured {
+  margin-top: 50px;
   clear:both;
+  height: 200px;
+  width: 60%;
+  margin-left:20%;
+  
+
+}
+
+.picSlider {
+  display:inline-block;
+
 }
 .main {
     background-repeat: no-repeat;
@@ -105,3 +114,8 @@ blockquote:hover:after, blockquote:hover:before {
 blockquote span {
   font-weight: bold;
 }
+
+
+
+
+

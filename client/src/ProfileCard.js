@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import StarRating from 'react-star-rating';
 import StarRatingComponent from 'react-star-rating-component';
 require('./ProfileCardCss.css');
 
@@ -11,7 +10,7 @@ class ProfileCard extends Component {
     return (
       <div className='profileCard'>
         <div className='image col-md-3'>
-          <img className='profileCardImg' src={this.props.facility.image_url}/>
+          <img role="presentation" className='profileCardImg' src={this.props.facility.image_url}/>
         </div>
 
         <div className='info col-md-9'>
