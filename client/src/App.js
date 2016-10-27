@@ -86,6 +86,12 @@ class App extends Component {
   render() {
     return (
       <div className="Site">
+        <Header
+          redirect={this.redirect}
+          handleChange={this.handleChange.bind(this)}
+          queryDatabase={this.queryDatabase.bind(this)}
+        />
+
         <div className="Site-content">
           {this.props.children && React.cloneElement(this.props.children, {
             handleChange: this.handleChange.bind(this),

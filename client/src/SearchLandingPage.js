@@ -12,11 +12,6 @@ class SearchLandingPage extends Component {
   render() {
     return (
       <div>
-        <Header
-          redirect={this.props.redirect}
-          handleChange={this.props.handleChange}
-          queryDatabase={this.props.queryDatabase}
-        />
 
         <FilterBar filterResults={this.props.filterResults} />
 
