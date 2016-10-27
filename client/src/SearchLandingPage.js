@@ -13,11 +13,11 @@ class SearchLandingPage extends Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.props.onCompareClick()}>Compare</button>
+        
         
         <FilterBar filterResults={this.props.filterResults} />
         
-        <div>{
+        <div className='col-md-9'>{
           this.props.searchData.map((nursingHome) => {
             return (<ProfileCard onTitleClick={this.props.onTitleClick} key={nursingHome.id} facility={nursingHome}/>)
           })
@@ -31,3 +31,4 @@ class SearchLandingPage extends Component {
 
 export default SearchLandingPage;
 
+// <button onClick={() => this.props.onCompareClick()}>Compare</button>

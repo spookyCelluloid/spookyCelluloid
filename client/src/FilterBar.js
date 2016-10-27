@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import StarRating from 'react-star-rating';
 require('./FilterBar.css');
 
 class Filter extends Component {
@@ -14,7 +15,8 @@ class Filter extends Component {
       average_years_of_experience: 0,
       capacity: 0,
       filterList: [],
-      displayFilterList: []
+      displayFilterList: [],
+      checkbox: true
     };
 
   }
@@ -102,7 +104,7 @@ class Filter extends Component {
   render() {
 
     return (
-      <div className='sideBar'>
+      <div className='sideBar col-md-3'>
 
         <div className='filterBlock'><span className='filterTitle'>Features:</span> <br/>
           <input type="checkbox" value='Medicare' onClick={ (event) => this.updateFilter('Yes', event.target.value) }/> Accepts Medicare <br/>
@@ -117,7 +119,7 @@ class Filter extends Component {
         </div><hr/>
 
 
-        <div className='filterBlock' ><span className='filterTitle'>Specialties:</span>
+        <div className='filterBlock' ><span className='filterTitle'>Specialties:</span><br/>
           <input 
             type='text' 
             onChange={(e) => this.updateList(e.target.value)} 
@@ -125,13 +127,13 @@ class Filter extends Component {
 
           {
             this.state.displayFilterList.map((facility) => (
-              <div>
+              <div key={facility.name}>
                 <input 
                   type="checkbox" 
                   value={facility.name} 
                   checked={this.state.Specialties.indexOf(facility.name) > -1}
-                  onChange={ (e) => console.log(e.target.checked) }
-                  onClick={ (e) => {
+                  onChange={ (e) => {
+                    this.setState({checkbox: !this.state.checkbox});
                     this.updateFilter('Specialties', e.target.value);
                   } }
                   /> {facility.name}
@@ -141,8 +143,16 @@ class Filter extends Component {
         </div><hr/>
 
 
-        <div className='filterBlock' ><span className='filterTitle'> Ratings: </span> <span>{this.state.average_rating}</span>
-          <input type='range' defaultValue={0} max={5} step={1} style={{'width': '100px'}} onChange={(event) => this.updateFilter('average_rating', event.target.value)}/>
+        <div className='filterBlock' ><span className='filterTitle'> Ratings: </span> <span>{this.state.average_rating} stars</span>
+          <input 
+            className='filterSlider'
+            type='range' 
+            defaultValue={0} 
+            max={5} 
+            step={1} 
+            onChange={(event) => 
+              this.updateFilter('average_rating', event.target.value)
+            }/>
         </div><hr/>
 
         <div className='filterButton' onClick={() => this.createQueryString()}> Filter </div>

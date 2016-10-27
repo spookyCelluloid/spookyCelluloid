@@ -18,7 +18,7 @@ class Home extends Component {
     return (
       <div>
         <div>
-          <h1 className="title">One Up Elder Care</h1>
+          
           <SearchForm queryDatabase={this.props.queryDatabase} handleChange={this.props.handleChange} />
         </div>
         <div>
@@ -47,11 +47,7 @@ class Home extends Component {
           </div>
         </div>
 
-        <div className='footer'> 
-          <a href='#'>Home</a>
-          <a href='#'>About Us</a>
-          <a href='#'>Contact Us</a>
-        </div>
+        
 
       </div>
     )
