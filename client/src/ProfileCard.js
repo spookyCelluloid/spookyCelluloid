@@ -9,24 +9,24 @@ class ProfileCard extends Component {
   }
   render() {
     return (
-      <div className='profileCard col-md-9'>
+      <div className='profileCard'>
         <div className='image col-md-3'>
           <img className='profileCardImg' src={this.props.facility.image_url}/>
         </div>
         
         <div className='info col-md-9'>
-          <h3 className='profileCardName' onClick={() => this.props.onTitleClick(this.props.facility.id)}>{this.props.facility.facility_name}</h3>
+          <h3 className='profileCardName' onClick={() => this.props.onTitleClick(this.props.facility.id)}> {this.props.facility.facility_name} </h3>
           <p>{this.props.facility.street} {this.props.facility.city} , {this.props.facility.state} {this.props.facility.zip}</p>
           <p>{this.props.facility.phone_number}</p>
+
+          <div className='profileCardSpecialties'>
+            {this.props.facility.specialties.map((specialty) => (<span key={specialty}>{specialty}</span> ))}
+          </div>
         </div>
 
-        <div className='profileCardSpecialties'>
-          {this.props.facility.specialties.map((specialty) => (<span>{specialty}</span> ))}
-        </div>
+       
 
-        <div className='starRating'>
-            <StarRating name='starRating' rating={this.props.facility.average_rating}/>
-        </div>
+     
       </div>
       
      
@@ -35,5 +35,5 @@ class ProfileCard extends Component {
   }
 }
 
-export default ProfileCard 
+export default ProfileCard;
 

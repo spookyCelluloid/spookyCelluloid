@@ -15,7 +15,7 @@
 
 .info {
   margin-top: 2px;
-  line-height: 8px;
+  line-height: 10px;
 }
 
 .profileCardImg {
@@ -35,10 +35,11 @@
   padding-right: 0px
 }
 
-.profileCard span {
-  border: 1px solid green;
+.profileCardSpecialties span {
+  line-height: 20px;
+  border: 1px solid blue;
+  border-radius: 2px;
   margin: 2px;
-  line-height: 12px;
 }
 
 .starRating {
