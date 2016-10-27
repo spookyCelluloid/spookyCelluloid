@@ -27,6 +27,7 @@ div.inline {
 
 .headerSearchForm {
   margin: 0;
+  margin-top: 5px;
   padding: 0;
   width: 50%;
   height: 30px;
