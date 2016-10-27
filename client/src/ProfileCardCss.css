@@ -1,8 +1,13 @@
 .profileCard {
-  border: 2px solid #123D99;
+  border: .3px solid grey;
   height: 200px;
   margin-left: 30px;
   margin-bottom: 30px;
+ color: #717273;
+}
+
+.num_ratings {
+  font-size: 14px;
 }
 
 .image {
@@ -27,7 +32,7 @@
 
 .starRating input {
   display: none;
-  
+
 }
 
 .info {

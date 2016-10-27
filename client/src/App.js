@@ -12,7 +12,7 @@ class App extends Component {
       data: [],
       value: '',
       currentProfile: {}
-    } 
+    }
   }
 
   handleChange(value) {
@@ -28,14 +28,13 @@ class App extends Component {
       .then(function ({data}) {
         $('input[type="text"], textarea').val('');
         app.setState({data});
-        console.log('success!!!!!!!!', data);
 
-        browserHistory.push('/searchResults');  
+        browserHistory.push('/searchResults');
       })
       .catch(function (error) {
         console.log(error);
       });
-   
+
   }
 
   onTitleClick(facilityID) {
@@ -52,8 +51,6 @@ class App extends Component {
         var averageRating = Math.round(sum / data.reviews.length);
 
         data.averageRating = averageRating;
-
-        console.log(data);
 
         this.setState({currentProfile: data});
         browserHistory.push('/FacilityProfile');
@@ -73,7 +70,6 @@ class App extends Component {
     axios.get('http://localhost:8080/?search="' + this.state.value + '"&' + queryString)
     .then(function ({data}) {
        app.setState({data})
-        console.log('success with filtering!!!!!!!!', data);
     })
     .catch(function (error) {
       console.log(error);
@@ -95,7 +91,7 @@ class App extends Component {
             currentProfile: this.state.currentProfile
           })}
         </div>
-        <div className='footer'> 
+        <div className='footer'>
           <a href='#'>Home</a>
           <a href='#'>About Us</a>
           <a href='#'>Contact Us</a>
@@ -108,4 +104,3 @@ class App extends Component {
 export default App;
 
 
-      

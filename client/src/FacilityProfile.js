@@ -4,7 +4,7 @@ require('./facilityProfile.css');
 
 const FacilityProfile = ({currentProfile}) => (
 
-  <div>
+  <div className='profileCard'>
     <div className='title'>
         <h2 className='facilityName'>{currentProfile.facility_name}</h2>
         <h2 className='headerStar'><StarRating name='mainRating' rating={currentProfile.averageRating}/></h2>

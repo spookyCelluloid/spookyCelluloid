@@ -43,7 +43,7 @@ class Filter extends Component {
       query = '&specialties=';
 
       this.state.Specialties.forEach( (specialty) => {
-        query += '"' + specialty + '"' + ',';
+        query += '"' + specialty + '",';
       })
 
       query = query.slice(0, query.length-1);
@@ -63,7 +63,7 @@ class Filter extends Component {
       query += '&ownership=';
 
       this.state.Ownership.forEach( (whoOwns) => {
-        query += '"' + whoOwns + '"' + ',';
+        query += '"' + whoOwns + '",';
       })
 
       query = query.slice(0, query.length-1);
@@ -154,6 +154,7 @@ class Filter extends Component {
               {
                 this.state.star.map((s) =>
                   <a
+                    key={s}
                     className={s <= Number(this.state.average_rating) ? "star check" : "star"}
                     onClick={() => this.updateFilter('average_rating', ''+s)}>
                   </a>
