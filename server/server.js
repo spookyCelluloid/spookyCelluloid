@@ -6,7 +6,7 @@ var app = express();
 
 
 app.use(parser.json());
-app.use((req, res, next) => {
+app.use(function(req, res, next) {
   console.log(req.method + ' on ' + req.url);
   next();
 })
@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
 
 app.get('/facility', function(req, res) {
   var facilityID = req.query.id;
-  
+
   model.facility.getFacilityProfile(facilityID, function(err, results) {
     if (err) {
       res.send(err);
