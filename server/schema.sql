@@ -7,7 +7,7 @@
 
 -- ---
 -- Table 'User'
--- 
+--
 -- ---
 
 DROP DATABASE IF EXISTS `spookyCelluloid`;
@@ -17,7 +17,7 @@ CREATE DATABASE `spookyCelluloid`;
 USE spookyCelluloid;
 
 DROP TABLE IF EXISTS `User`;
-    
+
 CREATE TABLE `User` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(50) NOT NULL DEFAULT 'NULL',
@@ -30,26 +30,26 @@ CREATE TABLE `User` (
 
 -- ---
 -- Table 'Business_profile'
--- 
+--
 -- ---
 
 DROP TABLE IF EXISTS `Business_profile`;
-    
+
 CREATE TABLE `Business_profile` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `facility_name` VARCHAR(50) NOT NULL DEFAULT 'NULL',
-  `description` VARCHAR(1500) NOT NULL DEFAULT 'NULL',
+  `description` VARCHAR(3500) NOT NULL DEFAULT 'NULL',
   `phone_number` VARCHAR(14) NOT NULL DEFAULT 'NULL',
   `street` VARCHAR(100) NOT NULL DEFAULT 'NULL',
   `city` VARCHAR(50) NOT NULL DEFAULT 'NULL',
   `state` VARCHAR(20) NOT NULL DEFAULT 'NULL',
   `zip` VARCHAR(10) NOT NULL DEFAULT 'NULL',
   `ownership` VARCHAR(25) NOT NULL DEFAULT 'NULL',
-  `dietary_options` VARCHAR(250) NOT NULL DEFAULT 'NULL',
+  `dietary_options` VARCHAR(250) NULL DEFAULT 'NULL',
   `social_events` VARCHAR(3) NOT NULL DEFAULT 'NO',
   `staff_hr` INTEGER(3) NOT NULL DEFAULT 0,
   `capacity` INTEGER(4) NOT NULL DEFAULT 0,
-  `Medicare` VARCHAR(3) NOT NULL DEFAULT 'YES',
+  `Medicare` VARCHAR(3) NOT NULL DEFAULT 'Yes',
   `average_years_of_experience` INTEGER(2) NOT NULL DEFAULT 0,
   `cost_per_day` INTEGER(4) NULL,
   `image_url` VARCHAR(250) NOT NULL,
@@ -58,11 +58,11 @@ CREATE TABLE `Business_profile` (
 
 -- ---
 -- Table 'Specialties'
--- 
+--
 -- ---
 
 DROP TABLE IF EXISTS `Specialties`;
-    
+
 CREATE TABLE `Specialties` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NOT NULL DEFAULT 'NULL',
@@ -71,11 +71,11 @@ CREATE TABLE `Specialties` (
 
 -- ---
 -- Table 'Reviews'
--- 
+--
 -- ---
 
 DROP TABLE IF EXISTS `Reviews`;
-    
+
 CREATE TABLE `Reviews` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `content` VARCHAR(2500) NULL DEFAULT NULL,
@@ -88,11 +88,11 @@ CREATE TABLE `Reviews` (
 
 -- ---
 -- Table 'Business_specialties'
--- 
+--
 -- ---
 
 DROP TABLE IF EXISTS `Business_specialties`;
-    
+
 CREATE TABLE `Business_specialties` (
   `id` INTEGER NOT NULL AUTO_INCREMENT,
   `id_specialties` INTEGER NULL DEFAULT 0,
@@ -101,7 +101,7 @@ CREATE TABLE `Business_specialties` (
 );
 
 -- ---
--- Foreign Keys 
+-- Foreign Keys
 -- ---
 
 ALTER TABLE `Reviews` ADD FOREIGN KEY (id_User) REFERENCES `User` (`id`);
@@ -135,23 +135,23 @@ INSERT INTO `Business_profile` (`ownership`,`dietary_options`,`social_events`,`s
 
 ('For-profit','Provide meals to meet specific dietary and therapeutic needs, according to physician orders.','Yes',2.85,59,'Yes',3.7,'Linda Mar Care Center', 'Linda Mar Rehabilitation is a skilled nursing facility in sunny Pacifica, California. We provide 24-hour skilled care and rehabilitation services in a comfortable and friendly environment. At Linda Mar Rehabilitation, caring is our main concern. We believe the most effective way to provide compassionate care is to maintain high medical integrity, build a spirit of teamwork among staff, and maintain clean, beautiful surroundings for our patients and their visitors. We strive to make the transition into our facility as seamless as possible by providing each guest with an environment where they feel informed and comfortable. Our team of qualified professionals helps patients recover from surgery, injury, or serious illness. We understand the importance of creating a comfortable and nurturing atmosphere, whether our patients are here for short-term treatment or long-term care.', '(650) 359-4800', '751 San Pedro Terrace Road', 'Pacifica', 'California', '94044', NULL, 'http://www.lucilleslist.com/sites/default/files/styles/community_image/public/communities_images/LindaMarSM2_13.jpg?itok=uiACQf48'),
 
-('Non-profit','Variety of freshly prepared entrees, fine and casual dining options with waitstaff service, and facility hosted cocktail events.','Yes',2.70,55,'Yes',5,'San Francisco Towers', 'Welcome to San Francisco Towers, the city’s most complete, premier senior living community. Yes, this is world-class living, but more importantly this is a true community where like-minded residents are just part of your life and lifestyle. In fact, residents say it’s their neighbors who make living here so wonderfully special. Uniquely, San Francisco Towers is the shining reflection of why everyone’s favorite city is host to everyone’s favorite senior living community: cultured, worldly, special, personable, convenient, rewarding, and handsomely profiled with a gentle smile and spirit that welcomes both current and new residents alike. And while the living and lifestyle are remarkable, the assurance of healthier care and wellness is an important ingredient. We are, after all, a recognized and leading CCRC Life Care and Continuing Care community with optional healthcare and financing choices that alleviate worry for residents and their families. San Francisco Towers. The life you want, in the city you love.', '(415) 447-5527', '1661 Pine Street', 'San Francisco', 'California', '94109', NULL, 'http://www.jtm-esc.org/san-francisco-towers/'),
+('Non-profit','Variety of freshly prepared entrees, fine and casual dining options with waitstaff service, and facility hosted cocktail events.','Yes',2.70,55,'Yes',5,'San Francisco Towers', 'Welcome to San Francisco Towers, the city’s most complete, premier senior living community. Yes, this is world-class living, but more importantly this is a true community where like-minded residents are just part of your life and lifestyle. In fact, residents say it’s their neighbors who make living here so wonderfully special. Uniquely, San Francisco Towers is the shining reflection of why everyone’s favorite city is host to everyone’s favorite senior living community: cultured, worldly, special, personable, convenient, rewarding, and handsomely profiled with a gentle smile and spirit that welcomes both current and new residents alike. And while the living and lifestyle are remarkable, the assurance of healthier care and wellness is an important ingredient. We are, after all, a recognized and leading CCRC Life Care and Continuing Care community with optional healthcare and financing choices that alleviate worry for residents and their families. San Francisco Towers. The life you want, in the city you love.', '(415) 447-5527', '1661 Pine Street', 'San Francisco', 'California', '94109', NULL, 'http://spiritlivinggroup.com/wp-content/uploads/2011/07/Projects-Background-Page-San-Francisco-Towers-High-Res1-480x375.jpg'),
 
-('Non-Profit', 'Kosher, vegetarian, low sugar, low sodium, room service', 'yes', 0, 159, 'No', 4, 'Marymount Greenhills Retirement Center', 'Offering assisted living and independent living services, Marymount Greenhills Retirement Center gives you a great mix of services and amenities in a caring community. Assisted living offers a warm, supportive, and nuturing atmosphere for individuals who require some help but still want to keep their self-reliance. Why choose assisted living? Studies reveal that living near peers and participating in social activities leads to a more fulfilling life. With assisted living, you\'ll find senior-friendly living options and a dedicated staff. Communities have additional services that include 24-hour supervision and security, emergency response systems, access to licensed nursing care, chef-prepared meals, and assistance with grooming, dressing, and bathing. Housekeeping, laundry, social programs, and local transportation are usually provided, too. This community, a comprehensive independent living community, allows you to do as you wish, when you wish, but without the burdens of home ownership that can tie you down and take up your time. Serving both individuals and couples, these senior communities are also known as senior apartments, retirement villages, and communities for 55 and older. Residents stay in private apartments or individual homes with a variety of community amenities, services, and programs tailored specifically for seniors. Your personal belongings, such as furniture and favorite mementos, can move to your new home with you. With maintenance, groundskeeping, and housekeeping taken care of, seniors can focus on goals and passions instead of the daily demands of home ownership. Because independent living communities are intended for older adults who need little or no assistance, most do not offer medical care or supervision. Community services and amenities usually include fitness clubs, dining facilities, swimming pools, golf courses, hiking trails, social events, and more. Marymount Greenhills Retirement Center provides a low-maintenance lifestyle and the assistance seniors need to enjoy retirement. With comprehensive assisted living and independent living services, and with a caring environment, seniors can feel relaxed and secure. An assisted living community provides help when necessary with the goal of supplying the services required to stay as autonomous as possible. With independent living, you can do as you wish, when you wish, but without the burdens of home ownership that can take up your time. Call for more information on how you can become part of the Marymount Greenhills Retirement Center community.', '844-305-0101', 'Broadway Ave', 'Millbrae', 'CA', '94030', NULL, 'http://www.lucilleslist.com/sites/default/files/styles/community_image/public/communities_images/460_13.jpg?itok=B1NP-GQG'),
+('Non-Profit', 'Kosher, vegetarian, low sugar, low sodium, room service', 'Yes', 0, 159, 'No', 4, 'Marymount Greenhills Retirement Center', 'Offering assisted living and independent living services, Marymount Greenhills Retirement Center gives you a great mix of services and amenities in a caring community. Assisted living offers a warm, supportive, and nuturing atmosphere for individuals who require some help but still want to keep their self-reliance. Why choose assisted living? Studies reveal that living near peers and participating in social activities leads to a more fulfilling life. With assisted living, you\'ll find senior-friendly living options and a dedicated staff. Communities have additional services that include 24-hour supervision and security, emergency response systems, access to licensed nursing care, chef-prepared meals, and assistance with grooming, dressing, and bathing. Housekeeping, laundry, social programs, and local transportation are usually provided, too. This community, a comprehensive independent living community, allows you to do as you wish, when you wish, but without the burdens of home ownership that can tie you down and take up your time. Serving both individuals and couples, these senior communities are also known as senior apartments, retirement villages, and communities for 55 and older. Residents stay in private apartments or individual homes with a variety of community amenities, services, and programs tailored specifically for seniors. Your personal belongings, such as furniture and favorite mementos, can move to your new home with you. With maintenance, groundskeeping, and housekeeping taken care of, seniors can focus on goals and passions instead of the daily demands of home ownership. Because independent living communities are intended for older adults who need little or no assistance, most do not offer medical care or supervision. Community services and amenities usually include fitness clubs, dining facilities, swimming pools, golf courses, hiking trails, social events, and more. Marymount Greenhills Retirement Center provides a low-maintenance lifestyle and the assistance seniors need to enjoy retirement. With comprehensive assisted living and independent living services, and with a caring environment, seniors can feel relaxed and secure. An assisted living community provides help when necessary with the goal of supplying the services required to stay as autonomous as possible. With independent living, you can do as you wish, when you wish, but without the burdens of home ownership that can take up your time. Call for more information on how you can become part of the Marymount Greenhills Retirement Center community.', '(844) 305-0101', 'Broadway Ave', 'Millbrae', 'CA', '94030', NULL, 'http://www.lucilleslist.com/sites/default/files/styles/community_image/public/communities_images/460_13.jpg?itok=B1NP-GQG'),
 
-('Non-Profit', NULL, 'Yes', NULL, 31, 'yes', 5, 'Villa Marin', 'Villa Marin Ambulatory Care Unit concentrates on giving the best assisted living care and support to seniors in San Rafael, CA. Assisted living communities provide a chore-free lifestyle and the support you or your loved one needs to maintain as much independence as possible. Living in a senior community has many advantages. Research suggests that seniors who live near their peers and have a variety of social activities feel a greater sense of well-being. With assisted living, you\'ll enjoy senior-friendly homes and a welcoming staff. Other services you\'ll find include around-the-clock supervision and security, access to professional nurses, emergency call systems, help with daily living, and nutritious meals prepared by chefs. These communities typically provide housekeeping, laundry, transportation, and a calendar of social events. Reside at Villa Marin Ambulatory Care Unit and enjoy an exciting new chapter of life, where residents can enjoy conversation and meet new friends. With a full range of assisted living services, and with a warm, friendly staff, seniors feel right at home. The help you\'ll find at assisted living communities is offered as necessary, with the goal of supplying the support services required to stay as self-reliant as possible.', '(415) 492-2408', 'Thorndale Dr.', 'San Rafael', 'CA', '94903', NULL, 'http://i0.wp.com/villa-marin.com/wp-content/uploads/2016/08/Condo138_IMG_0574.jpg?resize=768%2C489'),
+('Non-Profit', NULL, 'Yes', 0, 31, 'Yes', 5, 'Villa Marin', 'Villa Marin Ambulatory Care Unit concentrates on giving the best assisted living care and support to seniors in San Rafael, CA. Assisted living communities provide a chore-free lifestyle and the support you or your loved one needs to maintain as much independence as possible. Living in a senior community has many advantages. Research suggests that seniors who live near their peers and have a variety of social activities feel a greater sense of well-being. With assisted living, you\'ll enjoy senior-friendly homes and a welcoming staff. Other services you\'ll find include around-the-clock supervision and security, access to professional nurses, emergency call systems, help with daily living, and nutritious meals prepared by chefs. These communities typically provide housekeeping, laundry, transportation, and a calendar of social events. Reside at Villa Marin Ambulatory Care Unit and enjoy an exciting new chapter of life, where residents can enjoy conversation and meet new friends. With a full range of assisted living services, and with a warm, friendly staff, seniors feel right at home. The help you\'ll find at assisted living communities is offered as necessary, with the goal of supplying the support services required to stay as self-reliant as possible.', '(415) 492-2408', 'Thorndale Dr.', 'San Rafael', 'CA', '94903', NULL, 'http://i0.wp.com/villa-marin.com/wp-content/uploads/2016/08/Condo138_IMG_0574.jpg?resize=768%2C489'),
 
-('Non-Profit', 'Dining room is open daily for breakfast, lunch, and dinner. Our casual Bistro also serves a variety of favorites from 10:30 a.m to 3:00 p.m and offers a menu for takeout as well.', 'Yes', 3.03, 43, 'Yes', 5, 'St. Paul\'s Towers', 'St. Paul’s Towers has been an active part of Oakland since 1966. In addition to this local history, St. Paul’s Towers is one of the flagship communities of Episcopal Senior Communities (ESC), a California nonprofit public benefit corporation more than 50 years old and tax exempt under Section 501(c)(3) of the IRS code.', '510.835.4700', '100 Bay Pl', 'Oakland', 'CA', '94610', NULL, 'http://www.jtm-esc.org/st-pauls-towers/wp-content/uploads/sites/23/2016/01/l3.jpg'),
+('Non-Profit', 'Dining room is open daily for breakfast, lunch, and dinner. Our casual Bistro also serves a variety of favorites from 10:30 a.m to 3:00 p.m and offers a menu for takeout as well.', 'Yes', 3.03, 43, 'Yes', 5, 'St. Paul\'s Towers', 'St. Paul’s Towers has been an active part of Oakland since 1966. In addition to this local history, St. Paul’s Towers is one of the flagship communities of Episcopal Senior Communities (ESC), a California nonprofit public benefit corporation more than 50 years old and tax exempt under Section 501(c)(3) of the IRS code.', '(510) 835-4700', '100 Bay Pl', 'Oakland', 'CA', '94610', NULL, 'http://www.jtm-esc.org/st-pauls-towers/wp-content/uploads/sites/23/2016/01/l3.jpg'),
 
-('Non-Profit', NULL, 'yes', NULL, 90, 'no', 4, 'The Berkshire', 'Located close in a quiet residential area just west of downtown, Silverado Berkeley is memory care that provides for residents\' minds, bodies and spirits. While amenities such as nutritious food, engagements, social events, pets and clinical staff are common among assisted living providers, there is a difference when it comes to experience and care. We have been leading the way in memory care for 20 years.', '(866) 827-5137', '2235 Sacramento Street', 'Berkeley', 'CA', '94702', NULL, 'http://info.rentnet.com/property/79/560779/photo/560779.p18.jpg'),
+('Non-Profit', NULL, 'Yes', 0, 90, 'No', 4, 'The Berkshire', 'Located close in a quiet residential area just west of downtown, Silverado Berkeley is memory care that provides for residents\' minds, bodies and spirits. While amenities such as nutritious food, engagements, social events, pets and clinical staff are common among assisted living providers, there is a difference when it comes to experience and care. We have been leading the way in memory care for 20 years.', '(866) 827-5137', '2235 Sacramento Street', 'Berkeley', 'CA', '94702', NULL, 'http://info.rentnet.com/property/79/560779/photo/560779.p18.jpg'),
 
-('For-profit', NULL, 'yes', NULL, 200, 'yes', 3, 'Pacifica Senior Living', 'Find a warm greeting for your loved one at Pacifica Senior Living Oakland Heights, offering the very best in assisted living services. For residents who cherish their independence but still need a helping hand with some daily activities, the assisted living program at Pacifica Senior Living Oakland Heights is designed for exactly such a lifestyle. Come experience true freedom, but one with compassionate care always nearby! Assisted living communities have many benefits. Research suggests that seniors who live near their peers and have a variety of social activities feel a greater sense of well-being. With assisted living, you\'ll enjoy senior-friendly apartments and a busy social calendar. Other services you\'ll find include around-the-clock supervision and security, access to professional nurses, emergency call systems, help with daily living, and nutritious meals prepared by chefs. These communities typically provide housekeeping, laundry, transportation, and a calendar of social events. Reside at Pacifica Senior Living Oakland Heights and relish an exciting new chapter of life, where seniors can share stories and enjoy the companionship of peers. In this community, assisted living services are provided. The help you\'ll find at assisted living communities is offered when you need it, with the goal of supplying the support services required to stay as self-sufficient as possible. Call today and discover how Pacifica Senior Living Oakland Heights is the perfect fit for seniors requiring assisted living services.', '(866) 827-4997', '2361 East 29th Street', 'Oakland', 'CA', '94606', NULL, 'https://static.senioradvisor.com/images/2014/06/02/14/27/49/406/PacificaSeniorLivingHillsborough151904'),
+('For-profit', NULL, 'Yes', 0, 200, 'Yes', 3, 'Pacifica Senior Living', 'Find a warm greeting for your loved one at Pacifica Senior Living Oakland Heights, offering the very best in assisted living services. For residents who cherish their independence but still need a helping hand with some daily activities, the assisted living program at Pacifica Senior Living Oakland Heights is designed for exactly such a lifestyle. Come experience true freedom, but one with compassionate care always nearby! Assisted living communities have many benefits. Research suggests that seniors who live near their peers and have a variety of social activities feel a greater sense of well-being. With assisted living, you\'ll enjoy senior-friendly apartments and a busy social calendar. Other services you\'ll find include around-the-clock supervision and security, access to professional nurses, emergency call systems, help with daily living, and nutritious meals prepared by chefs. These communities typically provide housekeeping, laundry, transportation, and a calendar of social events. Reside at Pacifica Senior Living Oakland Heights and relish an exciting new chapter of life, where seniors can share stories and enjoy the companionship of peers. In this community, assisted living services are provided. The help you\'ll find at assisted living communities is offered when you need it, with the goal of supplying the support services required to stay as self-sufficient as possible. Call today and discover how Pacifica Senior Living Oakland Heights is the perfect fit for seniors requiring assisted living services.', '(866) 827-4997', '2361 East 29th Street', 'Oakland', 'CA', '94606', NULL, 'https://static.senioradvisor.com/images/2014/06/02/14/27/49/406/PacificaSeniorLivingHillsborough151904'),
 
-('For-profit', 'low sodium, low sugar, vegetarian, room service', 'yes', NULL, 210, 'no', 4, 'Vintage Coventry Park', 'Vintage Coventry Park provides assisted living, independent living, memory care and respite care services and living options for seniors. Assisted living, geared toward individuals who want to live with some level of independence but occassionally need a little assistance, is the fastest growing, long-term care option for seniors. Living in a senior community has many advantages. Research suggests that seniors who live near their peers and have a variety of social activities feel a greater sense of well-being. Assisted living provides senior-friendly homes and a welcoming staff. Other services you\'ll find include around-the-clock supervision and security, access to professional nurses, emergency call systems, help with daily living, and nutritious meals prepared by chefs.', '(866) 827-5137', '1550 Sutter St', 'San Francisco', 'CA', '94109', NULL, 'https://s3-media1.fl.yelpcdn.com/bphoto/qTub8Suo0c4jKSiFPVaWyQ/o.jpg'),
+('For-profit', 'low sodium, low sugar, vegetarian, room service', 'Yes', 0, 210, 'No', 4, 'Vintage Coventry Park', 'Vintage Coventry Park provides assisted living, independent living, memory care and respite care services and living options for seniors. Assisted living, geared toward individuals who want to live with some level of independence but occassionally need a little assistance, is the fastest growing, long-term care option for seniors. Living in a senior community has many advantages. Research suggests that seniors who live near their peers and have a variety of social activities feel a greater sense of well-being. Assisted living provides senior-friendly homes and a welcoming staff. Other services you\'ll find include around-the-clock supervision and security, access to professional nurses, emergency call systems, help with daily living, and nutritious meals prepared by chefs.', '(866) 827-5137', '1550 Sutter St', 'San Francisco', 'CA', '94109', NULL, 'https://s3-media1.fl.yelpcdn.com/bphoto/qTub8Suo0c4jKSiFPVaWyQ/o.jpg'),
 
-('For-profit', NULL, 'yes', NULL, 6, 'no', 5, 'Common Destiny', 'Common Destiny is a residential care home for seniors located in Fremont. We can help you take care of your parents by providing a safe home for them.  We offer an alternative to home care in a quiet family oriented neighborhood. Our 2 caregivers provide 24 hour care and will work closely with you in taking care of your loved ones. We provide all the standard care services for the elderly such as assistance with daily living, medication management and compassion. We can provide ambulatory and non-ambulatory service as well as hospice care.', '(866) 827-5137', '34209 Sylvester Dr', 'Fremont', 'CA', '94555', NULL, 'https://s3-media3.fl.yelpcdn.com/bphoto/DaSyhAw2mStw9eufO1YJ1g/l.jpg'),
+('For-profit', NULL, 'Yes', 0, 6, 'No', 5, 'Common Destiny', 'Common Destiny is a residential care home for seniors located in Fremont. We can help you take care of your parents by providing a safe home for them.  We offer an alternative to home care in a quiet family oriented neighborhood. Our 2 caregivers provide 24 hour care and will work closely with you in taking care of your loved ones. We provide all the standard care services for the elderly such as assistance with daily living, medication management and compassion. We can provide ambulatory and non-ambulatory service as well as hospice care.', '(866) 827-5137', '34209 Sylvester Dr', 'Fremont', 'CA', '94555', NULL, 'https://s3-media3.fl.yelpcdn.com/bphoto/DaSyhAw2mStw9eufO1YJ1g/l.jpg'),
 
-('For-profit', 'low sugar, low sodium', 'yes', NULL, 96, 'no', 4, 'Bay Park', 'When Holiday Retirement was founded in 1971, it set out to create an independent living lifestyle unlike anything seniors had ever experienced before: cheerful communities filled with friendly, accepting neighbors, live-in managers dedicated to the happiness and well-being of each resident, innovative activities, programs and travel opportunities for fun and personal growth, and all the chores and details of daily life taken care of.', '(866) 869-2130', '2621 Appian Way', 'Pinole', 'California', '94564', NULL, 'http://media.alternativesforseniors.com/images/account/408/408_1.jpg');
+('For-profit', 'low sugar, low sodium', 'Yes', 0, 96, 'No', 4, 'Bay Park', 'When Holiday Retirement was founded in 1971, it set out to create an independent living lifestyle unlike anything seniors had ever experienced before: cheerful communities filled with friendly, accepting neighbors, live-in managers dedicated to the happiness and well-being of each resident, innovative activities, programs and travel opportunities for fun and personal growth, and all the chores and details of daily life taken care of.', '(866) 869-2130', '2621 Appian Way', 'Pinole', 'California', '94564', NULL, 'http://media.alternativesforseniors.com/images/account/408/408_1.jpg');
 
 
 
@@ -186,7 +186,7 @@ INSERT INTO `Specialties` (`name`) VALUES
 ('Diabetic Care'),
 ('Respite stays'),
 ('Arthritis'),
-('Asthma'),  
+('Asthma'),
 ('Breathing Support with Oxygen'),
 ('Breathing Support with a Ventilator'),
 ('Cancer'),
@@ -198,7 +198,7 @@ INSERT INTO `Specialties` (`name`) VALUES
 ('Tendency To Fall'),
 ('Diabetic Diet'),
 ('Oral Medication'),
-('Insulin Injection Self-Administered')
+('Insulin Injection Self-Administered'),
 ('Broken Bones'),
 ('Emphysema or Other Lung Disease (COPD)'),
 ('Osteoporosis'),
