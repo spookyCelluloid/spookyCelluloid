@@ -15,11 +15,11 @@ class SearchLandingPage extends Component {
 
   // backToTop Button setup
   componentWillMount() {
-    window.addEventListener('scroll', this.handleScroll);
+    window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('scroll', this.handleScroll.bind(this));
   }
 
   handleScroll() {
