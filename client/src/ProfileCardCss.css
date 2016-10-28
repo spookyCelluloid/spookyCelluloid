@@ -2,6 +2,8 @@
   height: 190px;
   color: #717273;
   font-size: 18px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .profileCard-specialty {
@@ -12,13 +14,15 @@
   padding-bottom: 10px;
   color: #717273;
   font-size: 14px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .profile {
   margin-left: 30px;
   border: 1px solid grey;
   margin-bottom: 30px;
-  border-radius: 3px;
+  border-radius: 5px;
 }
 
 .profile:hover {
@@ -42,7 +46,6 @@
   padding-left: 0px;
   padding-right: 0px;
   position: relative;
-
 }
 
 .profileCardSubtitle {
@@ -61,6 +64,7 @@
 .profileCardImg {
   width: 100%;
   height: 100%;
+  border-top-left-radius: 4px;
   /*border-radius: 10px;*/
   /*margin: 10%*/
 }
