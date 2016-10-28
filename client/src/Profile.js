@@ -1,14 +1,39 @@
 import React, { Component } from 'react';
+import Lightbox from 'react-images';
 require('./Profile.css');
 
 
 class Profile extends Component {
   constructor(props){
     super(props);
-    console.log('profile******', this.props.currentProfile)
+    
+    this.state = {
+      lightboxIsOpen: false
+    }
+  }
+
+  lightboxDisplay(){
+    this.setState({lightboxIsOpen: true});
+  }
+
+  closeLightbox() {
+    console.log('close meeee')
+    console.log(this)
+    console.log(this.state.lightboxIsOpen, 'before')
+    this.setState=({lightboxIsOpen: false})
+    console.log(this.state.lightboxIsOpen, 'after')
   }
 
   render(){
+    if(this.state.lightboxIsOpen === true ) {
+      return(
+        <Lightbox
+        images={[{ src: `${this.props.currentProfile.image_url}`}]}
+        isOpen={this.state.lightboxIsOpen}
+        onClose={this.closeLightbox.bind(this)}
+      />
+      )
+    } else if (this.state.lightboxIsOpen === false) {
     return(
       <div className='container-fluid wrapper'>
           
@@ -23,7 +48,7 @@ class Profile extends Component {
                   <li><a href="#section3">Reviews</a></li>
                   <li><a href="#section4">Visit the Facility</a></li>
                 </ul>
-                <img src={this.props.currentProfile.image_url} style={{height: '100px', width: '150px'}} />
+                <img src={this.props.currentProfile.image_url} onClick={()=>{this.lightboxDisplay()}} style={{height: '100px', width: '150px'}} />
               </div>
               
               <div className='col-md-8 information'>
@@ -72,6 +97,7 @@ class Profile extends Component {
         </div>
       </div>
     )
+  }
   }
 
 }
