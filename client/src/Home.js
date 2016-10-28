@@ -45,12 +45,15 @@ class Home extends Component {
             <blockquote className='col-md-3'> . Aenean eu neque feugiat, lacinia est ut, pulvinar elit. Cras sagittis, quam at lobortis euismod, metus ante finibus lacus, sed tempor odio lorem cursus orci. Duis aliquam nisi tincidunt convallis laoreet. In tincidunt non eros vel dapibus. Vestibulum non porta enim. Cras quis tellus quis ex varius rhoncus quis sed turpis. <span> Robin Kuehn </span> </blockquote>
         </div>
 
-        <div className="Featured col-md-8" >
+
+        <div className="Featured" >
           <Carousel className='picSlider'>
-                  <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="http://www.californiaelderabuselawyer-blog.com/wp-content/uploads/sites/132/2015/11/Nursing-home-building.jpg"/> </a>
+                  <a>
+                    <img role="presentation" onClick={()=>{this.goFeatured()}} src="http://www.californiaelderabuselawyer-blog.com/wp-content/uploads/sites/132/2015/11/Nursing-home-building.jpg"/>
+                  </a>
                   <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="http://adesteinhomecare.com/colorado-senior-care/wp-content/uploads/2015/04/Why-In-Home-Care-Is-A-Better-Option-For-Your-Mom-And-Dad-Than-A-Retirement-Home-.jpg"/></a>
                   <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="https://mustbethistalltoride.files.wordpress.com/2015/06/retirement-home.jpg"/></a>
-          </Carousel>
+          </Carousel><hr/><hr/>
         </div>
 
       </div>
