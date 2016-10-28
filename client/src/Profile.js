@@ -5,15 +5,12 @@ require('./Profile.css');
 class Profile extends Component {
   constructor(props){
     super(props);
-    console.log('profile******', this.props.currentProfile.reviews)
+    console.log('profile******', this.props.currentProfile)
   }
 
   render(){
     return(
-      <div className='container-fluid'>
-        <div className='col-md-9 mainpicContainer'>
-          <img className='mainpic' src={this.props.currentProfile.image_url} />
-        </div>
+      <div className='container-fluid wrapper'>
           
         <div className="row-fluid" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
           <div className="container">
@@ -24,12 +21,16 @@ class Profile extends Component {
                   <li><a href="#section1">At a Glance</a></li>
                   <li><a href="#section2">Contact Info</a></li>
                   <li><a href="#section3">Reviews</a></li>
+                  <li><a href="#section4">Visit the Facility</a></li>
                 </ul>
+                <img src={this.props.currentProfile.image_url} style={{height: '100px', width: '150px'}} />
               </div>
               
               <div className='col-md-8 information'>
-                <div id="section1"> 
+                <div id="section1">
+                  <div className='scrollTitle'> 
                   <h1>{this.props.currentProfile.facility_name}</h1>
+                  </div>
                   <p>{this.props.currentProfile.description}</p>
                   <h3>Amenitites</h3>
                   <ul>
@@ -43,39 +44,27 @@ class Profile extends Component {
                 </div> 
 
                   <div id='section2'>
-                  <p><strong>Contact Information: </strong></p>
+                  <h3>Contact Information</h3>
+                    <p className='street'>{`${this.props.currentProfile.street} ${this.props.currentProfile.city}, ${this.props.currentProfile.state} ${this.props.currentProfile.zip}`}</p>
                     <p className='phoneNumber'>{this.props.currentProfile.phone_number}</p>
-                    <p className='street'>{this.props.currentProfile.street}</p>
-                    <p className='city'>{this.props.currentProfile.city}</p>
-                    <p className='state'>{this.props.currentProfile.state}</p>
-                    <p className='zip'>{this.props.currentProfile.zip}</p>
                   </div>
               
 
                  <div id='section3' className='reviews'>
-                 <h1>Reviews</h1>
+                 <h3>Reviews</h3>
                   {this.props.currentProfile.reviews.map((review) => {
                       return (
-                        <div>
-                          <p className='reviewName'>{review.first_name} {review.last_name}</p>
-                          <p className='reviewDate'>Date {review.date}</p>
-                          <p className='reviewContent'><strong>Review: </strong>{review.content}</p>
+                        <div className='individualReview'>
+                          <p className='reviewContent'>{review.content}</p>
+                          <p className='reviewName'><strong>{review.first_name} {review.last_name}</strong> <span>{review.date}</span></p>
                         </div>
                       )
                     })}
                   </div>
-                 <div id="section3"> 
-                  <h1>Visit this Facility</h1>
-                  <p>Try to scroll this page and look at the navigation list while scrolling!</p>
-                </div> 
                  <div id="section4"> 
-                  <h1>Section 4</h1>
+                  <h3>Visit the Facility</h3>
                   <p>Try to scroll this page and look at the navigation list while scrolling!</p>
-                </div> 
-                <div id="section5"> 
-                  <h1>Section 5</h1>
-                  <p>Try to scroll this page and look at the navigation list while scrolling!</p>
-                </div> 
+                </div>
               </div>
 
             </div>

@@ -1,6 +1,7 @@
+
 .mainpicContainer {
-  margin-left:15%;
-  margin-bottom: 30px;
+margin-left:15%;
+margin-bottom: 30px;
 }
 .mainpic {
   width:500px; 
@@ -11,32 +12,37 @@
 }
 
 .information {
-  height: 300px;
+  height: 600px;
   overflow:scroll;
   border:0px;
   border-left: 1px solid black;
 }
 
-.reviews {
- 
-  float: left;
-}
-
-.reviewName {
+.individualReview {
+  padding:12px;
+  margin-bottom: 15px;
+  background-color: rgba(255,255,255, 0.5)
   
-  font-family: 'Oxygen', sans-serif;
-  font-weight: bold;
-  text-align: center;
-}
 
-.reviewDate {
-  position: relative;
-  font-family: 'Oxygen', sans-serif;
-  text-align: center;
 }
-
 .scrollList {
   text-align: right;
   border: 0px;
+  padding-top: 10px;
+}
 
+.scrollTitle {
+  border-bottom: 1px solid black;
+  margin-bottom: 30px;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.wrapper {
+  margin-top: 2%;
+}
+
+li a {
+  font-size: 20px;
 }
