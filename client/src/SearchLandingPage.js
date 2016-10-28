@@ -9,19 +9,20 @@ require('./SearchLandingPage.css');
 class SearchLandingPage extends Component {
   constructor(props) {
     super(props)
-
+    this.state = {
+      scrollTop: 0
+    }
   }
 
   // backToTop Button setup
-  getInitialState() {
-    return { scrollTop: 0 };
-  }
   componentWillMount() {
     window.addEventListener('scroll', this.handleScroll);
   }
+
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
   }
+
   handleScroll() {
      this.setState({scrollTop: $(window).scrollTop()});
   }
