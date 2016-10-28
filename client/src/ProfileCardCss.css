@@ -8,8 +8,8 @@
 
 .profileCard-specialty {
   background-color: white;
-  border-top: 1px solid grey;
-  padding-left: 10px;
+  border-top: 1px solid #EEEEEE;
+  padding-left: 20px;
   padding-right: 10px;
   padding-bottom: 10px;
   color: #717273;
@@ -20,9 +20,31 @@
 
 .profile {
   margin-left: 30px;
-  border: 1px solid grey;
-  margin-bottom: 30px;
+  border: 1px solid #DADADA;
+  margin-bottom: 20px;
   border-radius: 5px;
+
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+}
+
+.profileIcon {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+img {
+  border: 0;
+}
+
+.profileLocation {
+  content: url('../images/location.png');
+}
+
+.profilePhone {
+  content: url('../images/phone.png');
 }
 
 .profile:hover {
@@ -50,6 +72,7 @@
 
 .profileCardSubtitle {
   color: #27AE60;
+  color: #DC7633;
   font-weight: bold;
   margin-top: 13px;
   margin-bottom: 2px;
@@ -74,10 +97,4 @@
 
 .starRating input {
   display: none;
-}
-
-.profileCardSpecialties span {
-  line-height: 20px;
-  border-radius: 2px;
-  margin-right: 2px;
 }
