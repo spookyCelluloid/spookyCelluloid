@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import ProfileCard from './ProfileCard.js';
 import FilterBar from './FilterBar'
 import $ from 'jquery';

@@ -41,8 +41,8 @@ class ProfileCard extends Component {
             <span className='num_ratings'> {this.props.facility.num_ratings + (this.props.facility.num_ratings > 1 ? ' reviews' : ' review')}</span>
 
             <div className='profileCardSubtitle'></div>
-            <p><img className='profileLocation profileIcon'/> {this.props.facility.street}, {this.props.facility.city}, {this.props.facility.state} {this.props.facility.zip}</p>
-            <p><img className='profilePhone profileIcon'/> {this.props.facility.phone_number}</p>
+            <p><img role="presentation" className='profileLocation profileIcon'/> {this.props.facility.street}, {this.props.facility.city}, {this.props.facility.state} {this.props.facility.zip}</p>
+            <p><img role="presentation" className='profilePhone profileIcon'/> {this.props.facility.phone_number}</p>
           </div>
         </div>
 
