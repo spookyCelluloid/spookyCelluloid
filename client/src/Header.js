@@ -18,7 +18,7 @@ class Header extends Component {
       <div className='header'>
         <span className='appName'>One Up Elderly</span>
 
-        <img
+        <img role="presentation"
           className='icon'
           onClick={() => this.props.redirect('')} />
 

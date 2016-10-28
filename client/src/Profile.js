@@ -17,11 +17,7 @@ class Profile extends Component {
   }
 
   closeLightbox() {
-    console.log('close meeee')
-    console.log(this)
-    console.log(this.state.lightboxIsOpen, 'before')
-    this.setState=({lightboxIsOpen: false})
-    console.log(this.state.lightboxIsOpen, 'after')
+    this.setState({lightboxIsOpen: false})
   }
 
   render(){
@@ -48,7 +44,7 @@ class Profile extends Component {
                   <li><a href="#section3">Reviews</a></li>
                   <li><a href="#section4">Visit the Facility</a></li>
                 </ul>
-                <img src={this.props.currentProfile.image_url} onClick={()=>{this.lightboxDisplay()}} style={{height: '100px', width: '150px'}} />
+                <img role='presentation' src={this.props.currentProfile.image_url} onClick={()=>{this.lightboxDisplay()}} style={{height: '100px', width: '150px'}} />
               </div>
               
               <div className='col-md-8 information'>
@@ -88,7 +84,7 @@ class Profile extends Component {
                   </div>
                  <div id="section4"> 
                   <h3>Visit the Facility</h3>
-                  <p>Try to scroll this page and look at the navigation list while scrolling!</p>
+                  <p>Google Maps</p>
                 </div>
               </div>
 

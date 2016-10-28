@@ -40,7 +40,6 @@ class App extends Component {
 
   onTitleClick(facilityID) {
     console.log(facilityID);
-    var app = this;
 
     axios.get('http://localhost:8080/facility?id=' + facilityID)
       .then(({data}) => {
