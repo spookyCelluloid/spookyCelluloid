@@ -4,7 +4,7 @@ var Util = require('../Util/util.js');
 module.exports = {
   filter: {
     getFilterList: function(callback) {
-      var filterQuery = 'SELECT name FROM Specialties ORDER BY name';
+      var filterQuery = 'SELECT DISTINCT name FROM Specialties ORDER BY name';
 
       db.query(filterQuery, function(err, filterList) {
         if (err) {

@@ -65,8 +65,6 @@
   width: 100%;
   height: 100%;
   border-top-left-radius: 4px;
-  /*border-radius: 10px;*/
-  /*margin: 10%*/
 }
 
 .profileCardName {
@@ -80,12 +78,6 @@
 
 .profileCardSpecialties span {
   line-height: 20px;
-  /*border: 1px solid blue;*/
   border-radius: 2px;
   margin-right: 2px;
 }
-
-/*.starRating {
-  width: 20px;
-  height: 20px;
-}*/
