@@ -183,7 +183,7 @@ class Filter extends Component {
           {
             this.state.displayFilterList.map((facility) => (
               <div
-                key={facility.name}
+                key={facility.id}
                 className='filterItem'
                 onClick={ () => {
                   this.setState({checkbox: !this.state.checkbox});
