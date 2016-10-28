@@ -1,21 +1,60 @@
 .profileCard {
-  border: 1px solid grey;
-  height: 280px;
-  margin-left: 30px;
-  margin-bottom: 30px;
+  height: 190px;
   color: #717273;
-  border-radius: 3px;
-  font-size: 18px
+  font-size: 18px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
-.profileCard:hover {
+.profileCard-specialty {
+  background-color: white;
+  border-top: 1px solid #EEEEEE;
+  padding-left: 20px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  color: #717273;
+  font-size: 14px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.profile {
+  margin-left: 30px;
+  border: 1px solid #DADADA;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+}
+
+.profileIcon {
+  width: 20px;
+  height: 20px;
+  background-size: cover;
+}
+
+img {
+  border: 0;
+}
+
+.profileLocation {
+  content: url('../images/location.png');
+}
+
+.profilePhone {
+  content: url('../images/phone.png');
+}
+
+.profile:hover {
   -webkit-box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.35);
   -moz-box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.35);
   box-shadow: 4px 4px 6px 1px rgba(0,0,0,0.35);
   cursor: pointer;
 }
 
-.profileCard:hover h3 {
+.profile:hover h3 {
   text-decoration: underline;
 }
 
@@ -29,11 +68,11 @@
   padding-left: 0px;
   padding-right: 0px;
   position: relative;
-
 }
 
 .profileCardSubtitle {
   color: #27AE60;
+  color: #DC7633;
   font-weight: bold;
   margin-top: 13px;
   margin-bottom: 2px;
@@ -48,8 +87,7 @@
 .profileCardImg {
   width: 100%;
   height: 100%;
-  /*border-radius: 10px;*/
-  /*margin: 10%*/
+  border-top-left-radius: 4px;
 }
 
 .profileCardName {
@@ -60,15 +98,3 @@
 .starRating input {
   display: none;
 }
-
-.profileCardSpecialties span {
-  line-height: 20px;
-  /*border: 1px solid blue;*/
-  border-radius: 2px;
-  margin-right: 2px;
-}
-
-/*.starRating {
-  width: 20px;
-  height: 20px;
-}*/

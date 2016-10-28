@@ -1,7 +1,6 @@
 .header {
   height: 40px;
   width: 100%;
-  /*background-color: #123D99;*/
   background-color: #27AE60;
   color: white;
   font-size: 30px;
@@ -21,8 +20,16 @@ div.inline {
   margin-left: 1%;
   width: 30px;
   height: 30px;
-  background: url('../images/home.png');
+  content: url('../images/home.png');
   background-size: cover;
+}
+
+img {
+  border: 0;
+}
+
+img:hover {
+  cursor: pointer;
 }
 
 .headerSearchForm {
@@ -37,8 +44,8 @@ div.inline {
 }
 
 .headerSearchForm input {
+  padding-left: 1.5%;
   margin: 0;
-  padding: 0;
   height: 30px;
   width: 85%;
   border-top-left-radius: 15px;

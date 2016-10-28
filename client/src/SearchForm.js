@@ -16,7 +16,7 @@ class SearchForm extends Component {
           <input
             className='inputBox'
             type="text"
-            placeholder='  search for city, zip, or name'
+            placeholder='Search for city, zip, or name...'
             onChange={(e) => this.props.handleChange(e.target.value)} />
           <button className='submit' type="submit">Search</button>
         </form>
