@@ -13,7 +13,7 @@ class ProfileCard extends Component {
         <div className='profileCard-specialty'>
           <div className='profileCardSubtitle'>Specialties:</div>
           <div className='profileCardSpecialties'>
-            {specialties.map((specialty) => (<span key={specialty}>{specialty}, </span> ))}
+            {specialties.map((specialty) => (<span>{specialty}, </span> ))}
           </div>
         </div>
       )
