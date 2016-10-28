@@ -51,7 +51,7 @@
   width: 25%;
 }
 
-.reviewContent {
+/*.reviewContent {
   float: left;
   position: relative;
   margin-left: 10%;
@@ -60,9 +60,9 @@
   border-bottom-color: #123d99;
   font-family: 'Oxygen', sans-serif;
   text-align: center;
-}
+}*/
 
-.reviews {
+/*.reviews {
   position: relative;
   float: left;
 }
@@ -79,7 +79,7 @@
   font-family: 'Oxygen', sans-serif;
   text-align: center;
 }
-
+*/
 .starRating {
   position: relative;
   text-align: center;
