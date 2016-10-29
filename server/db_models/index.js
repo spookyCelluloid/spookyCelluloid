@@ -58,8 +58,8 @@ module.exports = {
 
             var profile = business[0];
 
-            profile.specialties = specialties.map((specialty) => specialty.name);
-            profile.reviews = reviews.filter((review) => review.content !== undefined);
+            profile.specialties = specialties.map(function(specialty) {return specialty.name;});
+            profile.reviews = reviews.filter(function(review) { return review.content !== undefined; });
 
             callback(null, profile);
           })
