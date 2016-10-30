@@ -40,9 +40,9 @@ class Home extends Component {
 
 
         <div className="Quotes Row" >
-          <blockquote className='col-md-3'> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer efficitur, turpis a suscipit condimentum, augue lectus egestas dolor, a consectetur neque elit sit amet enim. Phasellus ut orci sit amet risus condimentum elementum non at tellus. Morbi id facilisis turpis. <span> Robin Kuehn </span> </blockquote>
-           <blockquote className='col-md-3'> . Aenean eu neque feugiat, lacinia est ut, pulvinar elit. Cras sagittis, quam at lobortis euismod, metus ante finibus lacus, sed tempor odio lorem cursus orci. Duis aliquam nisi tincidunt convallis laoreet. In tincidunt non eros vel dapibus. Vestibulum non porta enim. Cras quis tellus quis ex varius rhoncus quis sed turpis.s <span> Robin Kuehn </span> </blockquote>
-            <blockquote className='col-md-3'> . Aenean eu neque feugiat, lacinia est ut, pulvinar elit. Cras sagittis, quam at lobortis euismod, metus ante finibus lacus, sed tempor odio lorem cursus orci. Duis aliquam nisi tincidunt convallis laoreet. In tincidunt non eros vel dapibus. Vestibulum non porta enim. Cras quis tellus quis ex varius rhoncus quis sed turpis. <span> Robin Kuehn </span> </blockquote>
+          <blockquote className='col-md-3'> Searching for a good nursing home for my parents was challenging and stressful. One Up Eldercare gave me a place to see and read real reviews from people so that I could make the best decision for my parents and have piece of mind. Thanks One Up Eldercare! <span> Cindy T. </span> </blockquote>
+           <blockquote className='col-md-3'> Navigating the internet can be a challenge at my age. There's so many different websites that can be hard to understand. One Up Eldercare is an easy to use website that let me see all the places around me so I could make a smart choice. I can't recommend it enough! <span> Mark S. </span> </blockquote>
+            <blockquote className='col-md-3'> I went to a few different websites trying to find the information I needed on nursing homes. All the websites were outdated or had missing information and were really hard to navigate. Then I found One Up Eldercare and it was the first website that was easy to use and had everything I was looking for. It really is the only place to go to get all the info you need on nursing homes! <span> Barbara H. </span> </blockquote>
         </div>
 
 
