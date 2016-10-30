@@ -25,7 +25,7 @@ class App extends Component {
     event.target.value = '';
     var app = this;
 
-    axios.get('http://localhost:8080/?search="' + this.state.value + '"')
+    axios.get('http://198.199.117.37:8080/?search="' + this.state.value + '"')
       .then(function ({data}) {
         $('input[type="text"], textarea').val('');
         app.setState({data});
@@ -41,7 +41,7 @@ class App extends Component {
   onTitleClick(facilityID) {
     console.log(facilityID);
 
-    axios.get('http://localhost:8080/facility?id=' + facilityID)
+    axios.get('http://198.199.117.37:8080/facility?id=' + facilityID)
       .then(({data}) => {
         var sum = 0;
         data.reviews.forEach((review) => {
@@ -67,7 +67,7 @@ class App extends Component {
   filterResults(queryString) {
     var app = this;
 
-    axios.get('http://localhost:8080/?search="' + this.state.value + '"&' + queryString)
+    axios.get('http://198.199.117.37:8080/?search="' + this.state.value + '"&' + queryString)
     .then(function ({data}) {
        app.setState({data})
     })
