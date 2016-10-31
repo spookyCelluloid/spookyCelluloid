@@ -24,7 +24,7 @@
 
 ## Requirements
 
-- Node 
+- Node
 - MySQL
 - NPM
 
@@ -33,10 +33,10 @@
 ### Installing Dependencies
 
 From within the client directory:
-- npm install
+`npm install`
 
 From within the server directory:
-- npm install
+`npm install`
 
 
 ### Roadmap
