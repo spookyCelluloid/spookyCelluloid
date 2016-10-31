@@ -53,5 +53,3 @@ class SearchLandingPage extends Component {
 }
 
 export default SearchLandingPage;
-
-// <button onClick={() => this.props.onCompareClick()}>Compare</button>

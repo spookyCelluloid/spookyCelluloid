@@ -3,7 +3,9 @@ import Header from'./Header'
 import {browserHistory} from 'react-router';
 import $ from 'jquery';
 import axios from 'axios';
-require('./main.css')
+require('./main.css');
+
+//indexRoute of react router. This is the landing page.
 
 
 class App extends Component {
@@ -25,7 +27,7 @@ class App extends Component {
     event.target.value = '';
     var app = this;
 
-    axios.get('http://198.199.117.37:8080/?search="' + this.state.value + '"')
+    axios.get('http://localhost:8080/?search="' + this.state.value + '"')
       .then(function ({data}) {
         $('input[type="text"], textarea').val('');
         app.setState({data});
@@ -39,9 +41,10 @@ class App extends Component {
   }
 
   onTitleClick(facilityID) {
-    console.log(facilityID);
 
-    axios.get('http://198.199.117.37:8080/facility?id=' + facilityID)
+    //when a profile card is clicked from the search landing page,
+    //a get request is made to retrive all the information for that specific facility.
+    axios.get('http://localhost:8080/facility?id=' + facilityID)
       .then(({data}) => {
         var sum = 0;
         data.reviews.forEach((review) => {
@@ -60,14 +63,10 @@ class App extends Component {
       })
   };
 
-  onCompareClick() {
-    console.log('compare clicked');
-  };
-
   filterResults(queryString) {
     var app = this;
 
-    axios.get('http://198.199.117.37:8080/?search="' + this.state.value + '"&' + queryString)
+    axios.get('http://localhost:8080/?search="' + this.state.value + '"&' + queryString)
     .then(function ({data}) {
        app.setState({data})
     })
@@ -77,8 +76,8 @@ class App extends Component {
 
   }
 
+  //used for for the home button icon
   redirect(pageTo) {
-
     browserHistory.push('/' + pageTo);
   }
 

@@ -8,15 +8,6 @@
   margin-right: 10%;
 }
 
-/*.imageBorder img {
-  box-sizing: border-box;
-  border: 2px;
-  border-style: solid;
-  color: #123d99;
-  border-radius: 5px;
-  border-width: 100%;
-}*/
-
 .starRating input{
   display: none;
 }
@@ -51,35 +42,6 @@
   width: 25%;
 }
 
-/*.reviewContent {
-  float: left;
-  position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
-  border-bottom: 2px solid;
-  border-bottom-color: #123d99;
-  font-family: 'Oxygen', sans-serif;
-  text-align: center;
-}*/
-
-/*.reviews {
-  position: relative;
-  float: left;
-}
-
-.reviewName {
-  position: relative;
-  font-family: 'Oxygen', sans-serif;
-  font-weight: bold;
-  text-align: center;
-}
-
-.reviewDate {
-  position: relative;
-  font-family: 'Oxygen', sans-serif;
-  text-align: center;
-}
-*/
 .starRating {
   position: relative;
   text-align: center;
