@@ -15,7 +15,7 @@ class Header extends Component {
   render() {
     return (
       <div className='header'>
-        <span className='appName'>One Up Eldercare</span>
+        <span onClick={() => this.props.redirect('')} className='appName'>One Up Eldercare</span>
 
         <img role="presentation"
           className='icon'
