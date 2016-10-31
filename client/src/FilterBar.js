@@ -23,7 +23,7 @@ class Filter extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8080/getFilterList')
+    axios.get('http://138.68.48.45:8080/getFilterList')
       .then(({data}) => {
         this.setState({
           filterList: data,
