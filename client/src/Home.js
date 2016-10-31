@@ -46,10 +46,24 @@ class Home extends Component {
         <div className="Featured" >
           <Carousel className='picSlider'>
                   <a>
-                    <img role="presentation" onClick={()=>{this.goFeatured()}} src="http://www.californiaelderabuselawyer-blog.com/wp-content/uploads/sites/132/2015/11/Nursing-home-building.jpg"/>
+                    <div className='featureImage'>
+                      <img role="presentation" onClick={()=>{this.goFeatured()}} src="http://www.californiaelderabuselawyer-blog.com/wp-content/uploads/sites/132/2015/11/Nursing-home-building.jpg"/>
+                      <h2><span>Featured: Bancroft Convalescent Hospital</span></h2>
+                    </div>
                   </a>
-                  <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="http://adesteinhomecare.com/colorado-senior-care/wp-content/uploads/2015/04/Why-In-Home-Care-Is-A-Better-Option-For-Your-Mom-And-Dad-Than-A-Retirement-Home-.jpg"/></a>
-                  <a><img role="presentation" onClick={()=>{this.goFeatured()}} src="https://mustbethistalltoride.files.wordpress.com/2015/06/retirement-home.jpg"/></a>
+                  <a>
+                    <div className='featureImage'>
+                      <img role="presentation" onClick={()=>{this.goFeatured()}} src="http://adesteinhomecare.com/colorado-senior-care/wp-content/uploads/2015/04/Why-In-Home-Care-Is-A-Better-Option-For-Your-Mom-And-Dad-Than-A-Retirement-Home-.jpg"/>
+                        <h2><span>Featured: Linda Mar Care Center</span></h2>
+                    </div>
+                  </a>
+
+                  <a>
+                    <div className='featureImage'>
+                      <img role="presentation" onClick={()=>{this.goFeatured()}} src="https://mustbethistalltoride.files.wordpress.com/2015/06/retirement-home.jpg"/>
+                      <h2><span>Featured: San Francisco Towers</span></h2>
+                    </div>
+                  </a>
           </Carousel><hr/><hr/>
         </div>
 

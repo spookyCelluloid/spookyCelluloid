@@ -29,7 +29,6 @@
     font-size: 45px;
     font-weight: 100;
     color: white;
-    /*color: #DC7633;*/
 }
 
 .Quotes {
@@ -42,26 +41,32 @@
   margin-top: 50px;
   clear:both;
   height: 500px;
-  width: 80%;
-  margin-left: 10%;
-  /*margin-bottom: 200px;*/
+  width: 70%;
+  margin-left: 15%;
 }
 
-.featureLabel {
-  position: absolute;
-}
-
-.show {
+.featureImage {
   position: relative;
-  float: left;
-  height: 500px;
-  width: 80%;
+  width: 100%; /* for IE 6 */
 }
 
-.picSlider {
-  /*display:inline-block;*/
+h2 {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+}
+
+h2 span {
+   color: white;
+   font: bold 24px/45px 'Oxygen', Sans-Serif;
+   letter-spacing: -1px;
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
 
 }
+
 .main {
     background-repeat: no-repeat;
     background-position: bottom;
@@ -75,8 +80,7 @@
 
 a img {
     height: 500px;
-    width: 80%;
-    padding-left: 9%;
+    width: 100%;
     size: contain;
 }
 
