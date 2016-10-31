@@ -42,7 +42,7 @@ class Profile extends Component {
                   <li><a href="#section1">At a Glance</a></li>
                   <li><a href="#section2">Contact Info</a></li>
                   <li><a href="#section3">Reviews</a></li>
-                  <li><a href="#section4">Visit the Facility</a></li>
+                 
                 </ul>
                 <img role='presentation' src={this.props.currentProfile.image_url} onClick={()=>{this.lightboxDisplay()}} style={{height: '100px', width: '150px'}} />
               </div>
@@ -82,10 +82,6 @@ class Profile extends Component {
                       )
                     })}
                   </div>
-                 <div id="section4"> 
-                  <h3>Visit the Facility</h3>
-                  <p>Google Maps</p>
-                </div>
               </div>
 
             </div>

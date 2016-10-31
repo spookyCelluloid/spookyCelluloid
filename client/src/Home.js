@@ -7,18 +7,15 @@ require('./HomeCSS.css');
 class Home extends Component {
   constructor(props) {
     super(props)
-    console.log(props);
     this.handleResponse = this.handleResponse.bind(this);
   }
 
   handleResponse(data) {
-    console.log('handleResponse', data);
     this.props.handleResponseApp(data);
   }
 
   goFeatured(){
-
-
+    //connect this to facility profile
     console.log('feature clicked');
   }
 

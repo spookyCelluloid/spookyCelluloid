@@ -23,7 +23,7 @@ class Filter extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://198.199.117.37:8080/getFilterList')
+    axios.get('http://localhost:8080/getFilterList')
       .then(({data}) => {
         this.setState({
           filterList: data,
@@ -224,12 +224,3 @@ class Filter extends Component {
 
 export default Filter;
 
-// <input
-  // className='filterSlider'
-  // type='range'
-  // defaultValue={0}
-  // max={5}
-  // step={1}
-  // onChange={(event) =>
-  //   this.updateFilter('average_rating', event.target.value)
-  // }/>

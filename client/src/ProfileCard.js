@@ -9,11 +9,12 @@ class ProfileCard extends Component {
 
   renderSpecialty(specialties) {
     if (specialties.length) {
+      //add specialties to each of the profile cards
       return (
         <div className='profileCard-specialty'>
           <div className='profileCardSubtitle'>Specialties:</div>
           <div className='profileCardSpecialties'>
-            {specialties.map((specialty) => (<span>{specialty}, </span> ))}
+            {specialties.map((specialty) => (<span key={specialty.id}>{specialty}, </span> ))}
           </div>
         </div>
       )

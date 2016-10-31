@@ -9,7 +9,6 @@ class Header extends Component {
   }
 
   handleResponse(data) {
-    console.log('handleResponse', data);
     this.props.handleResponseApp(data);
   }
 
@@ -33,10 +32,3 @@ class Header extends Component {
 }
 
 export default Header;
-
-
-// <input type="text" onChange={(e) => this.props.handleChange(e.target.value)} />
-// <button type="submit" onClick={(e) => this.props.queryDatabase(e)}>s</button>
-
-
-
