@@ -32,11 +32,11 @@
 
 ### Installing Dependencies
 
-> From within the client directory:<br />
-> `npm install`
+From within the client directory:<br />
+`npm install`
 
-> From within the server directory:<br />
-> `npm install`
+From within the server directory:<br />
+`npm install`
 
 ### Starting the App
 
