@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import Lightbox from 'react-images';
+import StarRatingComponent from 'react-star-rating-component';
 require('./Profile.css');
 
 
 class Profile extends Component {
   constructor(props){
     super(props);
-    
+
     this.state = {
       lightboxIsOpen: false
     }
@@ -32,24 +33,24 @@ class Profile extends Component {
     } else if (this.state.lightboxIsOpen === false) {
     return(
       <div className='container-fluid wrapper'>
-          
+
         <div className="row-fluid" data-spy="scroll" data-target="#myScrollspy" data-offset="20">
           <div className="container">
             <div className="row">
-              
+
               <div className='col-md-3 scrollList' id="myScrollSy" >
                 <ul className="nav nav-pills nav-stacked">
                   <li><a href="#section1">At a Glance</a></li>
                   <li><a href="#section2">Contact Info</a></li>
                   <li><a href="#section3">Reviews</a></li>
-                 
+
                 </ul>
                 <img role='presentation' src={this.props.currentProfile.image_url} onClick={()=>{this.lightboxDisplay()}} style={{height: '100px', width: '150px'}} />
               </div>
-              
+
               <div className='col-md-8 information'>
                 <div id="section1">
-                  <div className='scrollTitle'> 
+                  <div className='scrollTitle'>
                   <h1>{this.props.currentProfile.facility_name}</h1>
                   </div>
                   <p>{this.props.currentProfile.description}</p>
@@ -62,14 +63,14 @@ class Profile extends Component {
                     <li>Ownership: {this.props.currentProfile.ownership} </li>
                     <li>Social Events: {this.props.currentProfile.social_events} </li>
                   </ul>
-                </div> 
+                </div>
 
                   <div id='section2'>
                   <h3>Contact Information</h3>
-                    <p className='street'>{`${this.props.currentProfile.street} ${this.props.currentProfile.city}, ${this.props.currentProfile.state} ${this.props.currentProfile.zip}`}</p>
-                    <p className='phoneNumber'>{this.props.currentProfile.phone_number}</p>
+                    <p className='street'><img role="presentation" className='profileLocation profileIcon'/> {`${this.props.currentProfile.street} ${this.props.currentProfile.city}, ${this.props.currentProfile.state} ${this.props.currentProfile.zip}`}</p>
+                    <p className='phoneNumber'><img role="presentation" className='profilePhone profileIcon'/> {this.props.currentProfile.phone_number}</p>
                   </div>
-              
+
 
                  <div id='section3' className='reviews'>
                  <h3>Reviews</h3>
@@ -77,7 +78,17 @@ class Profile extends Component {
                       return (
                         <div className='individualReview'>
                           <p className='reviewContent'>{review.content}</p>
-                          <p className='reviewName'><strong>{review.first_name} {review.last_name}</strong> <span>{review.date}</span></p>
+                          <p className='reviewName'><strong>{review.first_name} {review.last_name}</strong> <span>{review.date} </span>
+
+                            <StarRatingComponent
+                              name="rate2"
+                              editing={false}
+                              renderStarIcon={() => <span>★</span>}
+                              starCount={5}
+                              value={review.rating}
+                            />
+
+                          </p>
                         </div>
                       )
                     })}

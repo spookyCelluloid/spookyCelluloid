@@ -4,7 +4,7 @@ margin-left:15%;
 margin-bottom: 30px;
 }
 .mainpic {
-  width:500px; 
+  width:500px;
   height:auto;
   display: block;
   margin-left: auto;
@@ -18,11 +18,21 @@ margin-bottom: 30px;
   border-left: 1px solid black;
 }
 
+h3 {
+  color: #DC7633;
+}
+h1 {
+  color: #DC7633;
+}
+
 .individualReview {
   padding:12px;
   margin-bottom: 15px;
-  background-color: rgba(255,255,255, 0.5)
-  
+  background-color: rgba(255,255,255, 0.5);
+
+  -webkit-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+  -moz-box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 2px 1px rgba(0,0,0,0.15);
 
 }
 .scrollList {
@@ -35,8 +45,8 @@ margin-bottom: 30px;
   border-bottom: 1px solid black;
   margin-bottom: 30px;
 }
-::-webkit-scrollbar { 
-    display: none; 
+::-webkit-scrollbar {
+    display: none;
 }
 
 .wrapper {

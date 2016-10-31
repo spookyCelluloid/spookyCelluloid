@@ -27,7 +27,7 @@ class App extends Component {
     event.target.value = '';
     var app = this;
 
-    axios.get('http://localhost:8080/?search="' + this.state.value + '"')
+    axios.get('http://138.68.48.45:8080/?search="' + this.state.value + '"')
       .then(function ({data}) {
         $('input[type="text"], textarea').val('');
         app.setState({data});
@@ -44,7 +44,7 @@ class App extends Component {
 
     //when a profile card is clicked from the search landing page,
     //a get request is made to retrive all the information for that specific facility.
-    axios.get('http://localhost:8080/facility?id=' + facilityID)
+    axios.get('http://138.68.48.45:8080/facility?id=' + facilityID)
       .then(({data}) => {
         var sum = 0;
         data.reviews.forEach((review) => {
@@ -66,7 +66,7 @@ class App extends Component {
   filterResults(queryString) {
     var app = this;
 
-    axios.get('http://localhost:8080/?search="' + this.state.value + '"&' + queryString)
+    axios.get('http://138.68.48.45:8080/?search="' + this.state.value + '"&' + queryString)
     .then(function ({data}) {
        app.setState({data})
     })
