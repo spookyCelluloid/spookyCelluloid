@@ -24,26 +24,24 @@
 
 ## Requirements
 
-- Node 0.10.x
-- Redis 2.6.x
-- Postgresql 9.1.x
-- etc
+- Node 
+- MySQL
+- NPM
 
 ## Development
 
 ### Installing Dependencies
 
-From within the root directory:
+From within the client directory:
+- npm install
 
-```sh
-sudo npm install -g bower
-npm install
-bower install
-```
+From within the server directory:
+- npm install
+
 
 ### Roadmap
 
-View the project roadmap [here](LINK_TO_PROJECT_ISSUES)
+View the project roadmap [here](https://github.com/spookyCelluloid/spookyCelluloid/issues?q=is%3Aopen+is%3Aissue)
 
 
 ## Contributing
