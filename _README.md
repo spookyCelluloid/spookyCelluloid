@@ -32,25 +32,25 @@
 
 ### Installing Dependencies
 
-> From within the client directory:
+> From within the client directory:<br />
 > `npm install`
 
-> From within the server directory:
+> From within the server directory:<br />
 > `npm install`
 
 ### Starting the App
 
-> Start MySql database:
-> `mysql.server start`
-> `mysql -u root -p < PATH_TO_REPO/server/schema.sql`
+Start MySql database:<br />
+`mysql.server start`<br />
+`mysql -u root -p < PATH_TO_REPO/server/schema.sql`
 
-> Start Server:
-> From within the server directory:
-> `npm start`
+Start Server:
+From within the server directory:<br />
+`npm start`
 
-> Start Client:
-> From within the client directory:
-> `npm start`
+Start Client:
+From within the client directory:<br />
+`npm start`
 
 ### Roadmap
 
