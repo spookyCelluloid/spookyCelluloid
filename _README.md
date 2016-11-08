@@ -1,6 +1,6 @@
-# Project Name
+# One Up Elder Care
 
-> Spooky Celluloid
+
 
 ## Team
 
@@ -18,9 +18,6 @@
 1. [Team](#team)
 1. [Contributing](#contributing)
 
-## Usage
-
-> Some usage instructions
 
 ## Requirements
 
@@ -28,7 +25,7 @@
 - MySQL
 - NPM
 
-## Development
+
 
 ### Installing Dependencies
 
@@ -44,6 +41,3 @@ From within the server directory:
 View the project roadmap [here](https://github.com/spookyCelluloid/spookyCelluloid/issues?q=is%3Aopen+is%3Aissue)
 
 
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
