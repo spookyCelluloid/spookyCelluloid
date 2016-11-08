@@ -18,7 +18,7 @@
     font-size: 100px;
     letter-spacing: 8px;
     font-weight: bold;
-    font-family: 'Oxygen', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
     text-transform: uppercase;
     color: white;
 }
@@ -60,7 +60,7 @@ h2 {
 
 h2 span {
    color: white;
-   font: bold 24px/45px 'Oxygen', Sans-Serif;
+   font: bold 24px/45px 'Josefin Sans', sans-serif;
    letter-spacing: -1px;
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
