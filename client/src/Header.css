@@ -18,6 +18,10 @@ div.inline {
   margin-left: 5%;
 }
 
+.appName:hover{
+  cursor: pointer;
+}
+
 .icon {
   margin-left: 1%;
   width: 30px;
