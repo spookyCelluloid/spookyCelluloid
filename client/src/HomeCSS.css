@@ -1,0 +1,149 @@
+.content-wrap {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.layer {
+    background-color: black;
+    opacity: 0.2;
+    width: 100%;
+    height: 100%;
+}
+
+.content {
+    margin-top: -24px;
+}
+
+.heading-lg {
+    font-size: 100px;
+    letter-spacing: 8px;
+    font-weight: bold;
+    font-family: 'Josefin Sans', sans-serif;
+    text-transform: uppercase;
+    color: white;
+}
+
+.heading-sub {
+    position: relative;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-size: 45px;
+    font-weight: 100;
+    color: white;
+}
+
+.Quotes {
+  margin-top: 30px;
+  float:left;
+}
+
+
+.Featured {
+  margin-top: 50px;
+  clear:both;
+  height: 500px;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.featureImage {
+  position: relative;
+  width: 100%; /* for IE 6 */
+}
+
+h2 {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+}
+
+h2 span {
+   color: white;
+   font: bold 24px/45px 'Josefin Sans', sans-serif;
+   letter-spacing: -1px;
+   background: rgb(0, 0, 0); /* fallback color */
+   background: rgba(0, 0, 0, 0.7);
+   padding: 10px;
+
+}
+
+.main {
+    background-repeat: no-repeat;
+    background-position: bottom;
+    display: table;
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    background-image: url('../images/home_page_background.jpeg');
+    background-size: cover;
+}
+
+a img {
+    height: 500px;
+    width: 100%;
+    size: contain;
+}
+
+blockquote {
+  width:200px;
+  text-align:left;
+  padding: 20px;
+  margin-right: 50px;
+  margin-left: 60px;
+}
+
+blockquote:before {
+    content: open-quote;
+    font-size: 24pt;
+    text-align: center;
+    line-height: 42px;
+    color: #96000A;
+    background: #ddd;
+    float: left;
+    position: relative;
+    border-radius: 25px;
+    margin-right: 0.5em;
+    vertical-align: -0.4em;
+
+    /** define it as a block element **/
+    display: block;
+    height: 25px;
+    width: 25px;
+}
+blockquote:after {
+    content: close-quote;
+    font-size: 24pt;
+    text-align: center;
+    line-height: 42px;
+    color: #96000A;
+    background: #ddd;
+    float: right;
+    position: relative;
+    border-radius: 25px;
+    margin-right: 1em;
+    vertical-align: -0.5em;
+
+    /** define it as a block element **/
+    display: block;
+    height: 25px;
+    width: 25px;
+}
+
+blockquote:hover:after, blockquote:hover:before {
+    background-color: #96000A;
+    color:white;
+    transition: all 350ms;
+    -o-transition: all 350ms;
+    -moz-transition: all 350ms;
+    -webkit-transition: all 350ms;
+}
+
+blockquote span {
+  font-weight: bold;
+}
+
+
+
+
+

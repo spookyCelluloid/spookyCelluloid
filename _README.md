@@ -4,9 +4,9 @@ One Up Eldercare is the easiest way to search for nursing homes and get the info
 
 ## Team
 
-  - __Product Owner__: Robin Kuehn
-  - __Scrum Master__: Tim Zeng
-  - __Development Team Members__: Miles Smith, Jesse Mavi
+  - __Product Owner__: Tim Zeng
+  - __Scrum Master__: Miles Smith
+  - __Development Team Members__: Robin Kuehn, Jesse Mavi
 
 ## Table of Contents
 
