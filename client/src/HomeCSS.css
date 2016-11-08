@@ -24,6 +24,7 @@
 }
 
 .heading-sub {
+    position: relative;
     margin-top: 5px;
     margin-bottom: 10px;
     font-size: 45px;
