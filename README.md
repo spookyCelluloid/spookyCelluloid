@@ -4,13 +4,12 @@
 
 ## Team
 
-  - __Product Owner__: Tim Zeng
-  - __Scrum Master__: Miles Smith
-  - __Development Team Members__: Robin Kuehn, Jesse Mavi
+  - __Product Owner__: Robin Kuehn
+  - __Scrum Master__: Tim Zeng
+  - __Development Team Members__: Miles Smith, Jesse Mavi
 
 ## Table of Contents
 
-1. [Usage](#Usage)
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
