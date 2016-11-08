@@ -1,5 +1,5 @@
 # One Up Elder Care
-
+One Up Eldercare is the easiest way to search for nursing homes and get the information you need to make a sound decision. The website provides transperancy and honesty into the facilities that are responsible for providing the care that our loved ones may need.
 
 
 ## Team
@@ -10,7 +10,7 @@
 
 ## Table of Contents
 
-1. [Usage](#Usage)
+
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
